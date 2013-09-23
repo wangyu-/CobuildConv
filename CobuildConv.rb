@@ -1,5 +1,6 @@
+# ENCoding: UTF-8
 #!/user/local/bin/ruby -Ks
-def showHelp; scrName = File::basename($0.gsub(/¥¥/, '/'));
+def showHelp; scrName = File::basename($0.gsub(/\\/, '/'));
 puts <<"================================================"
 概要: COBUILD の EBStudio 用入力ファイルを作成する
 構文: ruby -Ks #{scrName} [<options>] <inDir> [<outDir>]
@@ -10,9 +11,9 @@ puts <<"================================================"
   <outDir>  出力ディレクトリ (指定なしならカレントディレクトリ)
 例:
 * COBUILD CD-ROM v1.0 (X:) から作成する
-  ruby -Ks #{scrName} X:¥¥ D:¥¥EPWING¥¥Cobuild
+  ruby -Ks #{scrName} X:\\ D:\\EPWING\\Cobuild
 * COBUILD CD-ROM v2.0/3.0 (X:) から Wordbank を作成する
-  ruby -Ks #{scrName} -wordbank X:¥¥DATA D:¥¥EPWING¥¥Cobuild
+  ruby -Ks #{scrName} -wordbank X:\\DATA D:\\EPWING\\Cobuild
 ================================================
 end
 =begin
@@ -51,8 +52,8 @@ end
 =end
 
   # ライブラリのロード
-  scrPath = File::dirname($0.gsub(/¥¥/, '/'))
-  scrName = File::basename($0.gsub(/¥¥/, '/'))
+  scrPath = File::dirname($0.gsub(/\\/, '/'))
+  scrName = File::basename($0.gsub(/\\/, '/'))
   $LOAD_PATH.unshift(scrPath)     # スクリプトパスをロードパスに追加
 
   begin
@@ -72,7 +73,7 @@ end
   def ARGV.option
     return nil if self.empty?
     arg = self.shift
-    if arg =‾ /^-/
+    if arg =~ /^-/
       return arg
     else
       self.unshift arg
@@ -177,7 +178,7 @@ PrefixAntonym = ' ⇔ '    # 反義語
 
 ###
 def changeExt(fname, newExt)
-  fname.sub(/¥.[^.]+$/, newExt)
+  fname.sub(/\.[^.]+$/, newExt)
 end
 
 def changeDirAndExt(fname, newDir, newExt)
@@ -203,15 +204,15 @@ class EBSFile < File
 
   def printEBS(outDir, version)
 
-    outDir = File::expand_path(outDir).gsub(/¥//, '¥¥')
+    outDir = File::expand_path(outDir).gsub(/\//, '\\')
 
     puts <<"--------"
-InPath=#{outDir}¥¥
-OutPath=#{outDir}¥¥
+InPath=#{outDir}\\
+OutPath=#{outDir}\\
 IndexFile=
 Copyright=
-GaijiFile=$(BASE)¥¥CobuildGaiji.xml
-GaijiMapFile=$(BASE)¥¥CobuildGaijiMap.xml
+GaijiFile=$(BASE)\\CobuildGaiji.xml
+GaijiMapFile=$(BASE)\\CobuildGaijiMap.xml
 EBType=0
 WordSearchHyoki=1
 WordSearchKana=1
@@ -263,8 +264,8 @@ Size=10000;50000;4000;32000000;6000;250000;50000;500;500;10000;2000
         title = Files[v]['title']
         dir = Files[v]['dir']
       puts <<"--------"
-Book=#{title};#{dir};英和辞典;$(BASE)¥¥#{copyrightFname};_;GAI16H00;GAI16F00;_;_;_;_;_;_;
-Source=$(BASE)¥¥#{outFname};_;_;HTML;
+Book=#{title};#{dir};英和辞典;$(BASE)\\#{copyrightFname};_;GAI16H00;GAI16F00;_;_;_;_;_;_;
+Source=$(BASE)\\#{outFname};_;_;HTML;
 --------
       end
     end
@@ -277,16 +278,16 @@ class WordbankEBSFile < EBSFile
 
   def printEBS(outDir, version, divEBS)
 
-    outDir = File::expand_path(outDir).gsub(/¥//, '¥¥')
+    outDir = File::expand_path(outDir).gsub(/\//, '\\')
     copyrightFname = changeExt(Files[F_Wordbank]['name' + version], CopyrightExt)
 
     puts <<"--------"
-InPath=#{outDir}¥¥
-OutPath=#{outDir}-WB¥¥
+InPath=#{outDir}\\
+OutPath=#{outDir}-WB\\
 IndexFile=
-Copyright=$(BASE)¥¥#{copyrightFname}
-GaijiFile=$(BASE)¥¥CobuildGaiji.xml
-GaijiMapFile=$(BASE)¥¥CobuildGaijiMap.xml
+Copyright=$(BASE)\\#{copyrightFname}
+GaijiFile=$(BASE)\\CobuildGaiji.xml
+GaijiMapFile=$(BASE)\\CobuildGaijiMap.xml
 EBType=0
 WordSearchHyoki=0
 WordSearchKana=0
@@ -343,7 +344,7 @@ Size=10000;10000;4000;35000000;60000;2350000;50000;500;500;10000;2000
           dir = Files[v]['dir'] + num
           puts <<"--------"
 Book=#{title};#{dir};英和辞典;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
-Source=$(BASE)¥¥#{outFname};_;_;HTML;
+Source=$(BASE)\\#{outFname};_;_;HTML;
 --------
         end
       else
@@ -357,7 +358,7 @@ Book=#{title};#{dir};英和辞典;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
           num = n.to_s
           outFname = changeExt(Files[v]['name' + version], num + OutExt)
           puts <<"--------"
-Source=$(BASE)¥¥#{outFname};_;_;HTML;
+Source=$(BASE)\\#{outFname};_;_;HTML;
 --------
         end
       end
@@ -386,7 +387,7 @@ def tagend(a)
   else
     r = a.pop
     unless a.empty?
-      r += a.last.sub(/¥//, '')
+      r += a.last.sub(/\//, '')
     end
   end
   r
@@ -399,21 +400,22 @@ def convert(str)
 
     if str[n, 1] == '<'
       if str[n + 2, 1] == '.'    # <tag.str>
-        case str[n + 1, 1]
+        wyc=str[n+1,1]
+        case wyc
         when 'e', 'f', 'x', 'u', 'b', 'w'
-          r += tagstart(a, '<b>', '</b>')
+          r += tagstart(a, '<b_'+wyc+'>', '</b_'+wyc+'>')
         when 'g', 'o', 'i', 'v'
-          r += tagstart(a, '<i>', '</i>')
+          r += tagstart(a, '<i_'+wyc+'>', '</i_'+wyc+'>')
         when 'c'
-          r += tagstart(a, '<i>(', ')</i>')
+          r += tagstart(a, '<i_'+wyc+'>(', ')</i_'+wyc+'>')
         when 'A', 'B'
-          r += tagstart(a, '<b>', '</b>')
+          r += tagstart(a, '<b_'+wyc+'>', '</b_'+wyc+'>')
         when 'O'
-          r += tagstart(a, '<i>', '</i>')
+          r += tagstart(a, '<i_'+wyc+'>', '</i_'+wyc+'>')
         when 'E'
-          r += tagstart(a, '<sup>', '</sup>')
+          r += tagstart(a, '<sup_'+wyc+'>', '</sup_'+wyc+'>')
         when 'S'     # Symbol
-          r += tagstart(a, '<sym>', '</sym>')
+          r += tagstart(a, '<sym)'+wyc+'>', '</sym_'+wyc+'>')
         else  # error
           T['<' + str[n + 1, 2] + '>'] += 1
           r += tagstart(a, '&lt;' + str[n + 1, 2], '&gt;')
@@ -425,14 +427,16 @@ def convert(str)
           p += 1
         end
         s = str[(n + 1)...p]
-        if s =‾ /^[zAB]/         # 発音アイコン
+        if s =~/^[zAB]/         # 発音アイコン
           r += ' '      # ???
         elsif s == 'DW'                  # Warning
-          r += tagstart(a, '<b>', '</b>') + '[!]' + tagend(a)
+          r += tagstart(a, '<b_DW>', '</b_DW>') + '[!]' + tagend(a)
         elsif s == 'li'
           r += ', '
-        elsif s == 'lb' || s == 'le'
-          r += '' # ignore
+        elsif s == 'lb'
+	  r +='<lb></lb>'
+        elsif s == 'le'
+          r += '<le></le>' # ignore
         elsif s == 'h'           # 分綴
           r += '&middot;'
         elsif s == 'inferior'    # errata?
@@ -452,8 +456,8 @@ def convert(str)
   end
   r += str[p, str.size]
 
-  r = r.gsub(/<¥/([ib])><¥1>/, '')
-  r = r.gsub(/<sym>(.+?)<¥/sym>/) {
+  r = r.gsub(/<\/([ib])><\1>/, '')
+  r = r.gsub(/<sym>(.+?)<\/sym>/) {
     code = $1
     case code
     when 'mu_flat'   then s = '♭'        # フラット記号
@@ -483,13 +487,13 @@ def printUnknownTags
     puts ''
     puts '==== Unknown Tags ===='
     T.sort.each { |tag, n|
-      printf("%s  %4d¥n", tag, n)
+      printf("%s  %4d\n", tag, n)
     }
   end
 end
 
 def checkFlag(tag, flag, mask)
-  b = flag & ‾mask
+  b = flag & ~mask
   if b != 0
     s = '%s: %02X %02X' % [tag, flag, b]
     puts ''
@@ -543,11 +547,12 @@ def printHead(d, type, f, idchar, idnum)
     comment = d.decode() if hasComment
     seq     = d.decode() if hasSeq
     if hasFreq
-      freq = ''
+      freq = '<freq>'
       s = d.readStr(1)
       s[0].times {
         freq += FreqChar
       }
+      freq+='</freq>'
     end
 
   end
@@ -584,7 +589,7 @@ def printHead(d, type, f, idchar, idnum)
   id = idchar + sprintf("%05d", idnum)
   f.puts '<dt id="' + id + '">' + s.strip + '</dt>'
 
-  entry = convert(entry.sub(/ ¥d+$/, ''))  # 見出し語区分の数字を削除
+  entry = convert(entry.sub(/ \d+$/, ''))  # 見出し語区分の数字を削除
   f.puts '<key type="表記">' + entry + '</key>'
   a = entry.split(/ +/)
   a.each { |x|
@@ -608,13 +613,14 @@ def printHead(d, type, f, idchar, idnum)
   data += comment                          if hasComment
 
   if data != ''
-    f.puts '<p>' + convert(data).sub(/ ;? *$/, '') + '</p>'
+    f.puts '<data>' + convert(data).sub(/ ;? *$/, '') + '</data>'
   end
 
 end
 
 ### 本体出力
 def printItem(d, type, f)
+  f.puts '<item>'
 
   ch = d.getFlag('item')
   hasHead   = (ch & 0x01 != 0)   # 小見出し
@@ -721,7 +727,7 @@ def printItem(d, type, f)
   if type == F_Wordbank && hasExample
     example.each do |v|
       s = convert(v)
-      head = $head.sub(/^¥*/, '')  # '*' をとる
+      head = $head.sub(/^\*/, '')  # '*' をとる
       title = head.sub(/written/, 'W').sub(/spoken/, 'S') + ' '
       a = s.split(/ +/, 10)
       a.each do |x|
@@ -744,7 +750,7 @@ def printItem(d, type, f)
     s += ' <e.' + style + '>' if hasStyle  # 章節番号
     s += ' <e.' + title + '>' if hasTitle
     if s != ''
-      f.puts '<p>' + convert(s).strip + '</p>'
+      f.puts '<pyy>' + convert(s).strip + '</pyy>'
       f.puts '<key type="表記">' + style + '</key>' if hasStyle
     end
     num = ''
@@ -789,15 +795,15 @@ def printItem(d, type, f)
         num = ''
       else
         num = '&xSym2;' if num == '+'
-        num = '<b>' + num + '</b> '
+        num = '<b_aa>' + num + '</b_aa> '
       end
     else
       num =  ''
     end
 
     if s != ''
-      s = convert(s).gsub(/##(¥/?dfn)##/) { '<' + $1 + '>' }
-      f.puts '<p>' + num + s.strip + '</p>'
+      s = convert(s).gsub(/##(\/?dfn)##/) { '<' + $1 + '>' }
+      f.puts '<pxx>' + num + s.strip + '</pxx>'
       num = ''
     end
   end
@@ -807,41 +813,41 @@ def printItem(d, type, f)
 #  end
 
   if hasNote
-    f.puts '<p>' + convert(note) + '</p>'
+    f.puts '<note>' + convert(note) + '</note>'
   end
 
   if hasMeaning
-    f.puts '<p>' + num + convert(meaning) + '</p>'
+    f.puts '<meaning>' + num + convert(meaning) + '</meaning>'
     num = ''
   end
 
   if hasTable
-    f.puts '<p>' + num + '</p>' if num != ''
+    f.puts '<table>' + num + '</table>' if num != ''
     table.each { |v|
                                 # 最初の <li> を削除
-      f.puts '<p>' + convert('<e.' + v.sub(/<li>/, '') + '>') + '</p>'
+      f.puts '<table_sub>' + convert('<e.' + v.sub(/<li>/, '') + '>') + '</table_sub>'
     }
   end
 
   if hasExample
-    f.puts '<p>' + num + '</p>' if num != ''
+    f.puts '<example>' + num + '</example>' if num != ''
     num = ''
     example.each { |v|
-      f.puts '<p>' + PrefixExample + convert(v) + '</p>' unless v.empty?
+      f.puts '<example_sub>' + PrefixExample + convert(v) + '</example_sub>' unless v.empty?
     }
   end
 
   if hasXRef
-    f.puts '<p>' + num + '</p>' if num != ''
+    f.puts '<ref>' + num + '</ref>' if num != ''
     num = ''
     xref.each { |v|
-      f.puts '<p>' + convert(v) + '</p>'
+      f.puts '<ref_sub>' + convert(v) + '</ref_sub>'
     }
   end
 
   # CD-ROM v3.0
   if hasSeeAlso
-    f.puts '<p>' + convert(seealso) + '</p>'
+    f.puts '<see_also>' + convert(seealso) + '</see_also>'
   end
 
   if hasImage
@@ -854,7 +860,7 @@ def printItem(d, type, f)
     s = ''
     s += PrefixSynonym + convert('<e.' + synonym + '>') if hasSynonym
     s += PrefixAntonym + convert('<e.' + antonym + '>') if hasAntonym
-    f.puts '<p>' + num + s.strip + '</p>'
+    f.puts '<rel>' + num + s.strip + '</rel>'
     num = ''
   end
 
@@ -875,8 +881,9 @@ def printItem(d, type, f)
 
   # 段落区切り
   if type == F_Usage || type == F_Grammar
-    f.puts '<p></p>'
+    f.puts '<par></par>'
   end
+  f.puts '</item>'
 
 end
 
@@ -926,7 +933,7 @@ def printBody(f, type, outf, d, from, to, max)
 
 #puts rec.unpack('H*')[0].upcase.scan(/../).join(' ')
 
-    STDERR.print num, '/', max, "¥r" if num % 10 == 0
+    STDERR.print num, '/', max, "\r" if num % 10 == 0
 #    outf.printf("(%5d)", num)
 
     d.setData(rec)
@@ -949,7 +956,7 @@ else
   d = CobuildDecoder::new
 end
 
-  STDERR.print Files[type]['title'], ' を出力しています...', "¥n"
+  STDERR.print Files[type]['title'], ' を出力しています...', "\n"
 
   CobuildFile.open(fname, 'rb') do |f|
     f.init
@@ -963,7 +970,7 @@ end
     max = count = f.recCount - 1
 #count = 350
 
-    STDERR.print 0, '/', max, "¥r"
+    STDERR.print 0, '/', max, "\r"
 
     if type == F_Wordbank  # 2 つのファイルに分割して出力
       outFname = changeDirAndExt(fname, outDir, '1' + OutExt)
@@ -988,7 +995,7 @@ end
       outf.close
     end
 
-    STDERR.print count, '/', max, "¥n"
+    STDERR.print count, '/', max, "\n"
 
 if $DEBUG
   d.printFlags
@@ -1005,7 +1012,7 @@ end
 ###
 def writeImage(fname, outDir)
 
-  STDERR.print Files[F_Image]['title'], ' を出力しています...', "¥n"
+  STDERR.print Files[F_Image]['title'], ' を出力しています...', "\n"
   if fname != ''
     imgDir = outDir + '/' + ImageDir
     Dir.mkdir(imgDir) unless File::exist?(imgDir)
@@ -1020,7 +1027,7 @@ def writeImage(fname, outDir)
       end
     end
   end
-  STDERR.print "注意: EBStudio で変換を実行する前に¥n#{imgDir} にある .gif ファイルを .jpg ファイルに変換してください¥n"
+  STDERR.print "注意: EBStudio で変換を実行する前に\n#{imgDir} にある .gif ファイルを .jpg ファイルに変換してください\n"
 
 end
 
@@ -1028,9 +1035,9 @@ end
 def main(runType, scrPath)
 
   inDir = ARGV.shift
-  inDir = inDir.gsub(/¥¥/, '/').sub(/¥/$/, '')
+  inDir = inDir.gsub(/\\/, '/').sub(/\/$/, '')
   outDir = ARGV.shift || '.'
-  outDir = outDir.gsub(/¥¥/, '/').sub(/¥/$/, '')
+  outDir = outDir.gsub(/\\/, '/').sub(/\/$/, '')
 
   # バージョン判定
   version = ''
@@ -1044,7 +1051,7 @@ def main(runType, scrPath)
     end
   end
   if version == ''
-    STDERR.print "#{inDir} に必要なファイルが見つかりません¥n"
+    STDERR.print "#{inDir} に必要なファイルが見つかりません\n"
     exit 3
   end
   # シソーラスがなければ CD-ROM v3 とみなす
@@ -1055,7 +1062,7 @@ def main(runType, scrPath)
   end
 
   start = Time::now
-  STDERR.print "開始日時: ", start.strftime('%Y-%m-%d %X'), "¥n"
+  STDERR.print "開始日時: ", start.strftime('%Y-%m-%d %X'), "\n"
 
   if runType == T_STANDARD
 
@@ -1066,7 +1073,7 @@ def main(runType, scrPath)
         if File::exist?(fname)
           printFile(fname, v, outDir)
         else
-          STDERR.print "#{fname}が見つかりません¥n"
+          STDERR.print "#{fname}が見つかりません\n"
         end
       end
     end
@@ -1077,7 +1084,7 @@ def main(runType, scrPath)
       if File::exist?(fname)
         writeImage(fname, outDir)
       else
-        STDERR.print "#{fname}が見つかりません¥n"
+        STDERR.print "#{fname}が見つかりません\n"
       end
     end
 
@@ -1094,7 +1101,7 @@ def main(runType, scrPath)
       if File::exist?(fname)
         printFile(fname, v, outDir)
       else
-        STDERR.print "#{fname}が見つかりません¥n"
+        STDERR.print "#{fname}が見つかりません\n"
       end
     end
 
@@ -1113,8 +1120,8 @@ def main(runType, scrPath)
   copyFile(scrPath + '/' + GaiziMapFname, outDir + '/' + GaiziMapFname)
 
   finish = Time::now
-  STDERR.print "終了日時: ", finish.strftime('%Y-%m-%d %X'), "¥n"
-  STDERR.print "処理時間: ", Time::at(finish.to_i - start.to_i).utc.strftime('%X'), "¥n"
+  STDERR.print "終了日時: ", finish.strftime('%Y-%m-%d %X'), "\n"
+  STDERR.print "処理時間: ", Time::at(finish.to_i - start.to_i).utc.strftime('%X'), "\n"
 
 end
 
