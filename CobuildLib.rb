@@ -1,41 +1,41 @@
-# COBUILD —pƒ‰ƒCƒuƒ‰ƒŠ
+# COBUILD ç”¨ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
 
 =begin
-—š—ğ:
+å±¥æ­´:
   v1.00 2003-06-28 by nomad
-    ŒöŠJ
+    å…¬é–‹
   v1.10 2004-01-14 by nomad
-    “Áê•¶š‚Ìˆµ‚¢‚ğáŠ±•ÏX
-    ƒƒ\ƒbƒh–¼‚ğ•ÏX
-      read() -> getc()AreadFlag -> getFlag
+    ç‰¹æ®Šæ–‡å­—ã®æ‰±ã„ã‚’è‹¥å¹²å¤‰æ›´
+    ãƒ¡ã‚½ãƒƒãƒ‰åã‚’å¤‰æ›´
+      read() -> getc()ã€readFlag -> getFlag
     CobuildDecoderDebug
-      •W€o—Í‚É‚·‚×‚Ä‚Ì•¶š—ñ‚Æƒf[ƒ^‚ğo—Í‚·‚é‚æ‚¤‚É•ÏX
+      æ¨™æº–å‡ºåŠ›ã«ã™ã¹ã¦ã®æ–‡å­—åˆ—ã¨ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
   v1.20 2004-01-31 by nomad
-    GRAPHICS ‚Ìƒf[ƒ^‚ğ unicode ‚Æ‚µ‚Äˆ—‚·‚é‚æ‚¤‚ÉC³
+    GRAPHICS ã®ãƒ‡ãƒ¼ã‚¿ã‚’ unicode ã¨ã—ã¦å‡¦ç†ã™ã‚‹ã‚ˆã†ã«ä¿®æ­£
       GRAPHICS -> UNICODE, Gtable -> Utable
-    •s–¾•¶š‚Ì’l‚ğ2i”‚Å‚È‚­10i”‚Åo—Í‚·‚é‚æ‚¤‚É•ÏX
+    ä¸æ˜æ–‡å­—ã®å€¤ã‚’2é€²æ•°ã§ãªã10é€²æ•°ã§å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´
   v1.30 2004-02-17 by nomad
-    Mac ŠÂ‹«‚Ö‚Ì‘Î‰ ('L*' -> 'V*'A'S*' -> 'v*'Aunpack ‚Ìƒpƒbƒ`)
+    Mac ç’°å¢ƒã¸ã®å¯¾å¿œ ('L*' -> 'V*'ã€'S*' -> 'v*'ã€unpack ã®ãƒ‘ãƒƒãƒ)
   v1.31 2004-02-26 by nomad
-    schwa ‚Æ 1/3 ‚Ìu;v‚Ì‚Â‚¯–Y‚ê‚ğC³
-    printUnknownAprintFlags ‚Åo—Íæ‚ğw’è
+    schwa ã¨ 1/3 ã®ã€Œ;ã€ã®ã¤ã‘å¿˜ã‚Œã‚’ä¿®æ­£
+    printUnknownã€printFlags ã§å‡ºåŠ›å…ˆã‚’æŒ‡å®š
 
-Œ —˜: Copyright (C) 2003-2004, nomad
-      ƒI[ƒvƒ“ƒ\[ƒXˆµ‚¢
+æ¨©åˆ©: Copyright (C) 2003-2004, nomad
+      ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹æ‰±ã„
 ====
-ƒNƒ‰ƒX\¬
+ã‚¯ãƒ©ã‚¹æ§‹æˆ
 
-  class CobuildDecoder           ƒf[ƒ^‰ğ“Ç
-    class CobuildDecoderDebug < CobuildDecoder  ƒfƒoƒbƒO—p
+  class CobuildDecoder           ãƒ‡ãƒ¼ã‚¿è§£èª­
+    class CobuildDecoderDebug < CobuildDecoder  ãƒ‡ãƒãƒƒã‚°ç”¨
 
-  class CobuildFile < File       «‘ƒtƒ@ƒCƒ‹
+  class CobuildFile < File       è¾æ›¸ãƒ•ã‚¡ã‚¤ãƒ«
     include Enumerable
-  class CobuildImageFile < File  ‰æ‘œƒtƒ@ƒCƒ‹
+  class CobuildImageFile < File  ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«
     include Enumerable
 
 =end
 
-# Mac OS X 10.2 •t‘®‚Ì ruby 1.6.7 ‚ÌƒoƒO‚Ö‚Ì‘Îˆ ('V*' ‚ª‚«‚©‚È‚¢)
+# Mac OS X 10.2 ä»˜å±ã® ruby 1.6.7 ã®ãƒã‚°ã¸ã®å¯¾å‡¦ ('V*' ãŒãã‹ãªã„)
 class String
   alias unpack_org unpack
   def unpack(template)
@@ -50,11 +50,11 @@ class String
   end
 end
 
-# ƒf[ƒ^‰ğ“Ç
+# ãƒ‡ãƒ¼ã‚¿è§£èª­
 class CobuildDecoder
 
   Ctable = {
-    # ‰p¬•¶š
+    # è‹±å°æ–‡å­—
     1 => 'a', 2 => 'b', 3 => 'c', 4 => 'd',
     5 => 'e', 6 => 'f', 7 => 'g', 8 => 'h', 9 => 'i',
     10 => 'j', 11 => 'k', 12 => 'l', 13 => 'm', 14 => 'n',
@@ -62,17 +62,17 @@ class CobuildDecoder
     20 => 't', 21 => 'u', 22 => 'v', 23 => 'w', 24 => 'x',
     25 => 'y', 26 => 'z',
 
-    # í—p‹L†
+    # å¸¸ç”¨è¨˜å·
     32 => ' ', 33 => '.', 34 => '<', 35 => '>',
     36 => ',', 37 => ';', 38 => '-',
 
-    # Œã‘±•¶š‚Æ‚ ‚í‚¹‚Ä 1 •¶š
+    # å¾Œç¶šæ–‡å­—ã¨ã‚ã‚ã›ã¦ 1 æ–‡å­—
     40 => '&grave;', 41 => '&acute;', 42 => '&circ;',
     43 => '&tilde;', 44 => '&uml;', 49 => '&cedil;',
     52 => 'GREEK',
     59 => 'SYMBOL',  61 => 'UPCASE', 62 => 'SPECIAL',
 
-    # ‚¤‚µ‚ë‚Éƒf[ƒ^ 4 •¶š•ª (3 ƒoƒCƒg)
+    # ã†ã—ã‚ã«ãƒ‡ãƒ¼ã‚¿ 4 æ–‡å­—åˆ† (3 ãƒã‚¤ãƒˆ)
     63 => 'UNICODE'
 
   }
@@ -81,8 +81,8 @@ class CobuildDecoder
 GRAPHICS=0C71D0&gt;013  tick <-- errata
 {tilde;UNKNOWN=101110}   3
 
-ŠJn“ú: 2004-01-14 21:28:16
-Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
+é–‹å§‹æ—¥æ™‚: 2004-01-14 21:28:16
+Wordbank ã‚’å‡ºåŠ›ã—ã¦ã„ã¾ã™...
 18922/18922
 ==== Unknown chars ====
 {UNKNOWN=101110}    11
@@ -91,8 +91,8 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
 {UNKNOWN=110011}     1
 {UNKNOWN=111001}     6
 {UNKNOWN=111100}     1
-I—¹“ú: 2004-01-14 21:37:01
-ˆ—ŠÔ: 00:08:45
+çµ‚äº†æ—¥æ™‚: 2004-01-14 21:37:01
+å‡¦ç†æ™‚é–“: 00:08:45
 
 <UNKNOWN=101110>    12  after &slash; 'O' 46
 <UNKNOWN=101111>   101  &ring; ? 47
@@ -112,71 +112,71 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     16 => '0', 17 => '1', 18 => '2', 19 => '3', 20 => '4',
     21 => '5', 22 => '6', 23 => '7', 24 => '8', 25 => '9',
 
-    # ???? ‚Ù‚Æ‚ñ‚Ç–¢Šm”F
+    # ???? ã»ã¨ã‚“ã©æœªç¢ºèª
     26 => ':', 27 => ';', 28 => '&lt;', 29 => '=', 30 => '&gt;',
-    31 => '?', 32 => '@', 33 => '[', 34 => '\\', 35 => ']',
+    31 => '?', 32 => '@', 33 => '[', 34 => 'Â¥Â¥', 35 => ']',
     36 => '^', 37 => '_', 38 => '`', 39 => '{', 40 => '|',
-    41 => '}', 42 => '~',
-    43 => '?? '	# •ÒWƒ~ƒX? or bullet?
+    41 => '}', 42 => 'â€¾',
+    43 => '?? '	# ç·¨é›†ãƒŸã‚¹? or bullet?
   }
 
   # SYMBOL
   Symtable = {
-     4 => '&sect;',         # ƒZƒNƒVƒ‡ƒ“‹L† (–{“–‚Í &#134) 000100
-    10 => '"', 11 => '"',   # ˆø—p•„ "..."
+     4 => '&sect;',         # ã‚»ã‚¯ã‚·ãƒ§ãƒ³è¨˜å· (æœ¬å½“ã¯ &#134) 000100
+    10 => '"', 11 => '"',   # å¼•ç”¨ç¬¦ "..."
     12 => '* ',             # bullet 001100
     13 => ' -- ',           # ??? 
-    14 => ' --- ',          # ’·‚¢ƒ_ƒbƒVƒ…
-    15 => '&trade;',        # ¤•W 001111
-    18 => '&cent;',         # ƒZƒ“ƒg‹L† 010010
-    19 => '&pound;',        # ƒ|ƒ“ƒh‹L†
-    24 => '&copy;',         # ’˜ìŒ ‹L† 011000
-    28 => '&reg;',          # “o˜^¤•W   011100
-    29 => '&deg;',          # Šp“x‹L†
-    31 => '&sup2;',         # ã•t‚«‚Ì2 011111
-    32 => '&sup3;',         # ã•t‚«‚Ì3 100000
-    36 => '&sup1;',         # ã•t‚«‚Ì1 100100
-    40 => '&frac12;',       # •ª” 1/2  101000
-    43 => '&times;',        # æZ‹L†  101011
-    44 => '&divide;'        # œZ‹L†  101100
+    14 => ' --- ',          # é•·ã„ãƒ€ãƒƒã‚·ãƒ¥
+    15 => '&trade;',        # å•†æ¨™ 001111
+    18 => '&cent;',         # ã‚»ãƒ³ãƒˆè¨˜å· 010010
+    19 => '&pound;',        # ãƒãƒ³ãƒ‰è¨˜å·
+    24 => '&copy;',         # è‘—ä½œæ¨©è¨˜å· 011000
+    28 => '&reg;',          # ç™»éŒ²å•†æ¨™   011100
+    29 => '&deg;',          # è§’åº¦è¨˜å·
+    31 => '&sup2;',         # ä¸Šä»˜ãã®2 011111
+    32 => '&sup3;',         # ä¸Šä»˜ãã®3 100000
+    36 => '&sup1;',         # ä¸Šä»˜ãã®1 100100
+    40 => '&frac12;',       # åˆ†æ•° 1/2  101000
+    43 => '&times;',        # ä¹—ç®—è¨˜å·  101011
+    44 => '&divide;'        # é™¤ç®—è¨˜å·  101100
   }
 
   # UNICODE
   Utable = {
     0x0259 => '&#x0259;',   # schwa
-    0x2070 => '<E.0>',      # superscript 0 ã•t‚«”š
+    0x2070 => '<E.0>',      # superscript 0 ä¸Šä»˜ãæ•°å­—
     0x2074 => '<E.4>',      # superscript 4
     0x2075 => '<E.5>',      # superscript 5
     0x2079 => '<E.9>',      # superscript 9
-    0x2153 => '&xFrac13;',  # •ª” 1/3
-    0x2192 => '¨',         # rightwards arrow
-    0x2660 => '&spades;',   # ƒgƒ‰ƒ“ƒv‚ÌƒXƒy[ƒh
-    0x2663 => '&clubs;',    # ƒgƒ‰ƒ“ƒv‚ÌƒNƒ‰ƒu
-    0x2665 => '&hearts;',   # ƒgƒ‰ƒ“ƒv‚Ìƒn[ƒg
-    0x2666 => '&diams;',    # ƒgƒ‰ƒ“ƒv‚Ìƒ_ƒCƒ„
-    0x266D => 'ó',         # music flat
-    0x266F => 'ò',         # music sharp
-    0x3003 => 'V',         # ditto
+    0x2153 => '&xFrac13;',  # åˆ†æ•° 1/3
+    0x2192 => 'â†’',         # rightwards arrow
+    0x2660 => '&spades;',   # ãƒˆãƒ©ãƒ³ãƒ—ã®ã‚¹ãƒšãƒ¼ãƒ‰
+    0x2663 => '&clubs;',    # ãƒˆãƒ©ãƒ³ãƒ—ã®ã‚¯ãƒ©ãƒ–
+    0x2665 => '&hearts;',   # ãƒˆãƒ©ãƒ³ãƒ—ã®ãƒãƒ¼ãƒˆ
+    0x2666 => '&diams;',    # ãƒˆãƒ©ãƒ³ãƒ—ã®ãƒ€ã‚¤ãƒ¤
+    0x266D => 'â™­',         # music flat
+    0x266F => 'â™¯',         # music sharp
+    0x3003 => 'ã€ƒ',         # ditto
   }
 
   # GREEK
   Greektable = {
-    16 => 'ƒÎ',     # ¬•¶š‚Ì pi (&pi;)
-    53 => 'ƒ³',     # ‘å•¶š‚Ì phi (&Phi;)
+    16 => 'Ï€',     # å°æ–‡å­—ã® pi (&pi;)
+    53 => 'Î¦',     # å¤§æ–‡å­—ã® phi (&Phi;)
   }
 
   def initialize
     @unknown = Hash::new(0)
   end
 
-  # ƒf[ƒ^‚ğİ’è‚·‚éBˆÈŒãA‘€ì‚Í‚±‚Ìƒf[ƒ^‚É‘Î‚µ‚Ä‚¨‚±‚È‚¤
+  # ãƒ‡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹ã€‚ä»¥å¾Œã€æ“ä½œã¯ã“ã®ãƒ‡ãƒ¼ã‚¿ã«å¯¾ã—ã¦ãŠã“ãªã†
   def setData(s)
     @s = s
     @sp = 0
     @counter = 0
   end
 
-  # 1•¶š(6ƒrƒbƒg)‚ğæ“¾‚µ‚ÄA‚»‚Ì”’l‚ğ•Ô‚·
+  # 1æ–‡å­—(6ãƒ“ãƒƒãƒˆ)ã‚’å–å¾—ã—ã¦ã€ãã®æ•°å€¤ã‚’è¿”ã™
   def getBits()
     case @counter % 4
     when 0
@@ -201,17 +201,17 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     c
   end
 
-  # “ü—ÍƒoƒCƒgˆÊ’u‚ğˆÚ“®‚·‚é
+  # å…¥åŠ›ãƒã‚¤ãƒˆä½ç½®ã‚’ç§»å‹•ã™ã‚‹
   def next(n = 1)
     @sp += n
   end
 
-  # Œ»İˆÊ’u‚ÌƒoƒCƒg’l‚ğ•Ô‚·
+  # ç¾åœ¨ä½ç½®ã®ãƒã‚¤ãƒˆå€¤ã‚’è¿”ã™
   def char()
     @s[@sp]
   end
 
-  # Œ»İˆÊ’uˆÈ~‚ğ•¶š—ñƒf[ƒ^‚Æ‚İ‚È‚µ‚Ä‰ğ“Ç‚µA’Êí‚Ì•¶š—ñ‚Æ‚µ‚Ä•Ô‚·
+  # ç¾åœ¨ä½ç½®ä»¥é™ã‚’æ–‡å­—åˆ—ãƒ‡ãƒ¼ã‚¿ã¨ã¿ãªã—ã¦è§£èª­ã—ã€é€šå¸¸ã®æ–‡å­—åˆ—ã¨ã—ã¦è¿”ã™
   def decode()
     @counter = 0
     a = []
@@ -255,7 +255,7 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
         else
           s = sprintf("{UNICODE=%04X}", b)
 #          a.push(s)
-          a.push('¬')      # ƒQƒ^
+          a.push('ã€“')      # ã‚²ã‚¿
           @unknown[s] += 1  # ???
         end
       when 'GREEK'
@@ -284,7 +284,7 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     end
   end
 
-  # 1 ƒoƒCƒg“Ç‚İ‚ñ‚ÅA‚»‚Ì”’l‚ğ•Ô‚·
+  # 1 ãƒã‚¤ãƒˆèª­ã¿è¾¼ã‚“ã§ã€ãã®æ•°å€¤ã‚’è¿”ã™
   def getc()
     @counter = 0
     c = @s[@sp]
@@ -292,8 +292,8 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     c
   end
 
-  # ƒtƒ‰ƒO‚ğ“Ç‚İ‚ñ‚ÅA‚»‚Ì”’l‚ğ•Ô‚·
-  #  (CobuildDecoderDebug —pA‚±‚ÌƒNƒ‰ƒX‚Å‚Í getc() ‚Æ“¯‚¶“®ì)
+  # ãƒ•ãƒ©ã‚°ã‚’èª­ã¿è¾¼ã‚“ã§ã€ãã®æ•°å€¤ã‚’è¿”ã™
+  #  (CobuildDecoderDebug ç”¨ã€ã“ã®ã‚¯ãƒ©ã‚¹ã§ã¯ getc() ã¨åŒã˜å‹•ä½œ)
   def getFlag(tag = '')
     @counter = 0
     c = @s[@sp]
@@ -301,8 +301,8 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     c
   end
 
-  # n ƒoƒCƒg“Ç‚İ‚ñ‚ÅA‚»‚Ì•¶š—ñ‚ğ•Ô‚·
-  # ƒoƒCƒg”‚Ìw’è‚ª‚È‚¯‚ê‚Î 1 ƒoƒCƒg‚¾‚¯“Ç‚İ‚Ş
+  # n ãƒã‚¤ãƒˆèª­ã¿è¾¼ã‚“ã§ã€ãã®æ–‡å­—åˆ—ã‚’è¿”ã™
+  # ãƒã‚¤ãƒˆæ•°ã®æŒ‡å®šãŒãªã‘ã‚Œã° 1 ãƒã‚¤ãƒˆã ã‘èª­ã¿è¾¼ã‚€
   def readStr(n = 1)
     @counter = 0
     s = @s[@sp, n]
@@ -310,23 +310,23 @@ Wordbank ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...
     s
   end
 
-  # •s–¾•¶š‚ğo—Í‚·‚é
+  # ä¸æ˜æ–‡å­—ã‚’å‡ºåŠ›ã™ã‚‹
   def printUnknown(out = STDOUT)
     unless @unknown.empty?
       out.puts '==== Unknown chars ===='
       @unknown.sort.each { |k, v|
-        out.printf("%s  %4d\n", k, v)
+        out.printf("%s  %4dÂ¥n", k, v)
       }
     end
   end
 
 end
 
-# ƒfƒoƒbƒO—p
+# ãƒ‡ãƒãƒƒã‚°ç”¨
 class CobuildDecoderDebug < CobuildDecoder
-# Ÿ‚ÌŒ`®‚Å•¶š—ñ‚¨‚æ‚Ñƒf[ƒ^‚ğ•W€o—Í‚É‚ào—Í‚·‚é
-#  ƒoƒCƒg“Ç‚İ‚İ  {XX}
-#  ƒtƒ‰ƒO          [tagname:XX]
+# æ¬¡ã®å½¢å¼ã§æ–‡å­—åˆ—ãŠã‚ˆã³ãƒ‡ãƒ¼ã‚¿ã‚’æ¨™æº–å‡ºåŠ›ã«ã‚‚å‡ºåŠ›ã™ã‚‹
+#  ãƒã‚¤ãƒˆèª­ã¿è¾¼ã¿  {XX}
+#  ãƒ•ãƒ©ã‚°          [tagname:XX]
 
   def initialize
     super
@@ -341,7 +341,7 @@ class CobuildDecoderDebug < CobuildDecoder
 
   def getc()
     c = super
-    printf("{%02X}\n", c)
+    printf("{%02X}Â¥n", c)
     c
   end
 
@@ -356,26 +356,26 @@ class CobuildDecoderDebug < CobuildDecoder
   def readStr(n = 1)
     s = super
     h, = s.unpack('H*')
-    print '{', h, '}', "\n"
+    print '{', h, '}', "Â¥n"
     s
   end
 
-  # ƒtƒ‰ƒOˆê——‚ğo—Í‚·‚é
+  # ãƒ•ãƒ©ã‚°ä¸€è¦§ã‚’å‡ºåŠ›ã™ã‚‹
   def printFlags(out = STDOUT)
     out.puts '==== Flags ===='
     @h.sort.each { |k, v|
-      out.printf("%s %6d\n", k, v)
+      out.printf("%s %6dÂ¥n", k, v)
     }
   end
 
 end
 
-# ƒf[ƒ^ƒtƒ@ƒCƒ‹ (.trd)
+# ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ« (.trd)
 class CobuildFile < File
   include Enumerable
 
-  # ƒwƒbƒ_î•ñ‚ğ“Ç‚İ‚Ş
-  #   new ‚ÌŒãA•K‚¸Às‚·‚é•K—v‚ª‚ ‚é
+  # ãƒ˜ãƒƒãƒ€æƒ…å ±ã‚’èª­ã¿è¾¼ã‚€
+  #   new ã®å¾Œã€å¿…ãšå®Ÿè¡Œã™ã‚‹å¿…è¦ãŒã‚ã‚‹
   def init
     binmode
     read(64)
@@ -389,9 +389,9 @@ class CobuildFile < File
     @pos0 = 0x80
   end
 
-  # ƒŒƒR[ƒhƒCƒ“ƒfƒbƒNƒX‚ğì¬‚·‚é
-  #   getRec ‚Æ each ‚ğg—p‚·‚éê‡A–‘O‚ÉÀs‚µ‚Ä‚¨‚­•K—v‚ª‚ ‚é
-  #   init “à‚ÅÀs‚µ‚Ä‚¨‚¢‚Ä‚à‚æ‚³‚»‚¤‚¾‚ª...
+  # ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ä½œæˆã™ã‚‹
+  #   getRec ã¨ each ã‚’ä½¿ç”¨ã™ã‚‹å ´åˆã€äº‹å‰ã«å®Ÿè¡Œã—ã¦ãŠãå¿…è¦ãŒã‚ã‚‹
+  #   init å†…ã§å®Ÿè¡Œã—ã¦ãŠã„ã¦ã‚‚ã‚ˆã•ãã†ã ãŒ...
   def makeIndex
     seek(@indexPos)
     bases = read(@indexBaseCount * 4).unpack('V*')
@@ -406,16 +406,16 @@ class CobuildFile < File
     }
 
 #  @index.each { |v|
-#    $stdout.printf("%08X %10d\n", v, v)
+#    $stdout.printf("%08X %10dÂ¥n", v, v)
 #  }
   end
 
-  # ƒŒƒR[ƒh”‚ğ•Ô‚·
+  # ãƒ¬ã‚³ãƒ¼ãƒ‰æ•°ã‚’è¿”ã™
   def recCount
     return @entryCount
   end
 
-  # ƒŒƒR[ƒh‚ğ•Ô‚·
+  # ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’è¿”ã™
   def getRec(n)
     if n >= 0 && n < @entryCount
       seek(@index[n])
@@ -433,18 +433,18 @@ class CobuildFile < File
 
 end
 
-# ‰æ‘œƒtƒ@ƒCƒ‹ (.mbx)
+# ç”»åƒãƒ•ã‚¡ã‚¤ãƒ« (.mbx)
 class CobuildImageFile < File
   include Enumerable
 
   attr_reader :dataCount
 
-  # ƒwƒbƒ_î•ñ‚ğ“Ç‚İ‚İAƒCƒ“ƒfƒbƒNƒX‚ğì¬‚·‚é
-  #   new ‚ÌŒãA•K‚¸Às‚·‚é•K—v‚ª‚ ‚é
+  # ãƒ˜ãƒƒãƒ€æƒ…å ±ã‚’èª­ã¿è¾¼ã¿ã€ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ä½œæˆã™ã‚‹
+  #   new ã®å¾Œã€å¿…ãšå®Ÿè¡Œã™ã‚‹å¿…è¦ãŒã‚ã‚‹
   def init
     dummy = read(80)
     tblCount, indexCount, @dataCount, = read(16).unpack('V*')
-#Kernel.printf("%d %d %d\n", tblCount, indexCount, @dataCount)
+#Kernel.printf("%d %d %dÂ¥n", tblCount, indexCount, @dataCount)
     tblPos, indexPos, @dataPos, = read(16).unpack('V*')
 
     @t = []
@@ -454,18 +454,18 @@ class CobuildImageFile < File
     }
 
 #@t.each_index { |n|
-#  Kernel.print n, ' ', @t[n], "\n"
+#  Kernel.print n, ' ', @t[n], "Â¥n"
 #}
 
   end
 
-  # ‰æ‘œƒf[ƒ^ (gif) ‚ğ•Ô‚·
+  # ç”»åƒãƒ‡ãƒ¼ã‚¿ (gif) ã‚’è¿”ã™
   def getImage(num)
-    # @t[0] ‚Æ @t[@t.size - 1] ‚Íƒ_ƒ~[?
+    # @t[0] ã¨ @t[@t.size - 1] ã¯ãƒ€ãƒŸãƒ¼?
     if (num < 1) || (num >= @t.size - 1)
       return ''
     else
-      seek(@dataPos + @t[num] + 1)      # +1 ‚Åæ“ª 1 ƒoƒCƒg“Ç‚İ”ò‚Î‚µ
+      seek(@dataPos + @t[num] + 1)      # +1 ã§å…ˆé ­ 1 ãƒã‚¤ãƒˆèª­ã¿é£›ã°ã—
       read(@t[num + 1] - @t[num] - 1)
     end
   end

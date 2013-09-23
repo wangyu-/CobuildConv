@@ -1,78 +1,78 @@
 #!/user/local/bin/ruby -Ks
-def showHelp; scrName = File::basename($0.gsub(/\\/, '/'));
+def showHelp; scrName = File::basename($0.gsub(/Â¥Â¥/, '/'));
 puts <<"================================================"
-ŠT—v: COBUILD ‚Ì EBStudio —p“ü—Íƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
-\•¶: ruby -Ks #{scrName} [<options>] <inDir> [<outDir>]
+æ¦‚è¦: COBUILD ã® EBStudio ç”¨å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹
+æ§‹æ–‡: ruby -Ks #{scrName} [<options>] <inDir> [<outDir>]
   <options>
-    -standard  Wordbank ˆÈŠO‚ğ•ÏŠ·‚·‚é (Šù’è’l)
-    -wordbank  Wordbank ‚Ì‚İ‚ğ•ÏŠ·‚·‚é
-  <inDir>   .trd ƒtƒ@ƒCƒ‹‚Ì‚ ‚éƒfƒBƒŒƒNƒgƒŠ
-  <outDir>  o—ÍƒfƒBƒŒƒNƒgƒŠ (w’è‚È‚µ‚È‚çƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ)
-—á:
-* COBUILD CD-ROM v1.0 (X:) ‚©‚çì¬‚·‚é
-  ruby -Ks #{scrName} X:\\ D:\\EPWING\\Cobuild
-* COBUILD CD-ROM v2.0/3.0 (X:) ‚©‚ç Wordbank ‚ğì¬‚·‚é
-  ruby -Ks #{scrName} -wordbank X:\\DATA D:\\EPWING\\Cobuild
+    -standard  Wordbank ä»¥å¤–ã‚’å¤‰æ›ã™ã‚‹ (æ—¢å®šå€¤)
+    -wordbank  Wordbank ã®ã¿ã‚’å¤‰æ›ã™ã‚‹
+  <inDir>   .trd ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+  <outDir>  å‡ºåŠ›ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª (æŒ‡å®šãªã—ãªã‚‰ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª)
+ä¾‹:
+* COBUILD CD-ROM v1.0 (X:) ã‹ã‚‰ä½œæˆã™ã‚‹
+  ruby -Ks #{scrName} X:Â¥Â¥ D:Â¥Â¥EPWINGÂ¥Â¥Cobuild
+* COBUILD CD-ROM v2.0/3.0 (X:) ã‹ã‚‰ Wordbank ã‚’ä½œæˆã™ã‚‹
+  ruby -Ks #{scrName} -wordbank X:Â¥Â¥DATA D:Â¥Â¥EPWINGÂ¥Â¥Cobuild
 ================================================
 end
 =begin
-o—Í: *.html  EBStudio “ü—Íƒtƒ@ƒCƒ‹
-      *.ebs   EBStudio ì‹ÆŠÂ‹«’è‹`ƒtƒ@ƒCƒ‹
-—š—ğ:
+å‡ºåŠ›: *.html  EBStudio å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«
+      *.ebs   EBStudio ä½œæ¥­ç’°å¢ƒå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
+å±¥æ­´:
   v1.00 2003-06-28 by nomad
-    ŒöŠJ
+    å…¬é–‹
   v1.10 2003-07-15 by nomad
-    Wordbank ‚É‘Î‰ (-wordbank ƒIƒvƒVƒ‡ƒ“)
-    CD-ROM v2.0 ‚Å”h¶Œ`‚Ìõˆø‚ªì¬‚³‚ê‚È‚¢ƒoƒO‚ğC³
-    CD-ROM v1.0 ‚Å”h¶Œ`‚ÌŒã•ûˆê’võˆø‚ª³‚µ‚­ì¬‚³‚ê‚È‚¢ƒoƒO‚ğC³
-    ’˜ìŒ ƒtƒ@ƒCƒ‹‚ğ’Ç‰Á
-    ŠOšƒtƒ@ƒCƒ‹‚ğo—Íæ‚ÉƒRƒs[
-    ‚»‚Ì‘¼
+    Wordbank ã«å¯¾å¿œ (-wordbank ã‚ªãƒ—ã‚·ãƒ§ãƒ³)
+    CD-ROM v2.0 ã§æ´¾ç”Ÿå½¢ã®ç´¢å¼•ãŒä½œæˆã•ã‚Œãªã„ãƒã‚°ã‚’ä¿®æ­£
+    CD-ROM v1.0 ã§æ´¾ç”Ÿå½¢ã®å¾Œæ–¹ä¸€è‡´ç´¢å¼•ãŒæ­£ã—ãä½œæˆã•ã‚Œãªã„ãƒã‚°ã‚’ä¿®æ­£
+    è‘—ä½œæ¨©ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ 
+    å¤–å­—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‡ºåŠ›å…ˆã«ã‚³ãƒ”ãƒ¼
+    ãã®ä»–
   v1.11 2003-07-29 by nomad
-    CD-ROM v2.0 ‚Ìƒtƒ@ƒCƒ‹–¼‚Ìƒ~ƒX‚ğC³ (hcp_en_cc3.trd -> hcp_en-cc3.trd ‚È‚Ç)
+    CD-ROM v2.0 ã®ãƒ•ã‚¡ã‚¤ãƒ«åã®ãƒŸã‚¹ã‚’ä¿®æ­£ (hcp_en_cc3.trd -> hcp_en-cc3.trd ãªã©)
   v1.12 2003-07-30 by nomad
-    ƒtƒ@ƒCƒ‹–¼‚ÌC³‚à‚ê (hcp_en_cc3.mbx -> hcp_en-cc3.mbx)
+    ãƒ•ã‚¡ã‚¤ãƒ«åã®ä¿®æ­£ã‚‚ã‚Œ (hcp_en_cc3.mbx -> hcp_en-cc3.mbx)
   v1.20 2004-01-18 by nomad
-    CD-ROM v3.0 ‚É‘Î‰
-    InPath ‚ğâ‘ÎƒpƒX‚Åo—Í‚·‚é‚æ‚¤‚ÉC³
+    CD-ROM v3.0 ã«å¯¾å¿œ
+    InPath ã‚’çµ¶å¯¾ãƒ‘ã‚¹ã§å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«ä¿®æ­£
   v1.30 2004-02-04 by nomad
-    Resource Pack ‚É‘Î‰
-    Wordbank ‚ğ 1 ‘Ğ‚É‚·‚é ebs ‚ğ•W€‚É‚µA2 ‘Ğ‚É‚·‚é ebs ‚ào—Í
-    Wordbank ˆÈŠO‚ÌŠOš‚ÉŠ®‘S‘Î‰
+    Resource Pack ã«å¯¾å¿œ
+    Wordbank ã‚’ 1 æ›¸ç±ã«ã™ã‚‹ ebs ã‚’æ¨™æº–ã«ã—ã€2 æ›¸ç±ã«ã™ã‚‹ ebs ã‚‚å‡ºåŠ›
+    Wordbank ä»¥å¤–ã®å¤–å­—ã«å®Œå…¨å¯¾å¿œ
   v1.31 2004-02-17 by nomad
-    Mac ŠÂ‹«‚ÅÀs‚Å‚«‚é‚æ‚¤C³
+    Mac ç’°å¢ƒã§å®Ÿè¡Œã§ãã‚‹ã‚ˆã†ä¿®æ­£
   v1.32 2004-02-26 by nomad
-    &Frac13; ‚ªŠOš‚É•ÏŠ·‚³‚ê‚È‚©‚Á‚½‚Ì‚ğC³
-    •¶––‚É•¶šQÆ (&...;) ‚ª‚­‚é‚ÆŠOš‚É•ÏŠ·‚³‚ê‚È‚¢ê‡‚ª‚ ‚Á‚½‚Ì‚ğC³
-    Resource Pack ‚Ì‹L†Aipa_schwa ‚É‘Î‰
-    tick mark ‚ÌŠOš‚ğ’Ç‰Á
-Œ —˜: Copyright (C) 2003-2004, nomad
-      ƒI[ƒvƒ“ƒ\[ƒXˆµ‚¢
+    &Frac13; ãŒå¤–å­—ã«å¤‰æ›ã•ã‚Œãªã‹ã£ãŸã®ã‚’ä¿®æ­£
+    æ–‡æœ«ã«æ–‡å­—å‚ç…§ (&...;) ãŒãã‚‹ã¨å¤–å­—ã«å¤‰æ›ã•ã‚Œãªã„å ´åˆãŒã‚ã£ãŸã®ã‚’ä¿®æ­£
+    Resource Pack ã®è¨˜å·ã€ipa_schwa ã«å¯¾å¿œ
+    tick mark ã®å¤–å­—ã‚’è¿½åŠ 
+æ¨©åˆ©: Copyright (C) 2003-2004, nomad
+      ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹æ‰±ã„
 =end
 
-  # ƒ‰ƒCƒuƒ‰ƒŠ‚Ìƒ[ƒh
-  scrPath = File::dirname($0.gsub(/\\/, '/'))
-  scrName = File::basename($0.gsub(/\\/, '/'))
-  $LOAD_PATH.unshift(scrPath)     # ƒXƒNƒŠƒvƒgƒpƒX‚ğƒ[ƒhƒpƒX‚É’Ç‰Á
+  # ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ãƒ­ãƒ¼ãƒ‰
+  scrPath = File::dirname($0.gsub(/Â¥Â¥/, '/'))
+  scrName = File::basename($0.gsub(/Â¥Â¥/, '/'))
+  $LOAD_PATH.unshift(scrPath)     # ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒ‘ã‚¹ã‚’ãƒ­ãƒ¼ãƒ‰ãƒ‘ã‚¹ã«è¿½åŠ 
 
   begin
     libName = 'CobuildLib.rb'
     require libName
   rescue LoadError => e
     STDERR.puts e.message
-    STDERR.puts "‘Îˆ: #{scrName} ‚Æ #{libName} ‚Ì‚ ‚éƒfƒBƒŒƒNƒgƒŠ‚ğ"
-    STDERR.puts "      ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚É‚µ‚ÄA‚â‚è‚È‚¨‚µ‚Ä‚­‚¾‚³‚¢"
+    STDERR.puts "å¯¾å‡¦: #{scrName} ã¨ #{libName} ã®ã‚ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’"
+    STDERR.puts "      ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ã—ã¦ã€ã‚„ã‚ŠãªãŠã—ã¦ãã ã•ã„"
     exit 1
   end
 
-  T_STANDARD = 0  # Wordbank ˆÈŠO‚ğo—Í
-  T_WORDBANK = 1  # Wordbank ‚Ì‚İo—Í
+  T_STANDARD = 0  # Wordbank ä»¥å¤–ã‚’å‡ºåŠ›
+  T_WORDBANK = 1  # Wordbank ã®ã¿å‡ºåŠ›
 
-  # ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ìˆ—
+  # ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®å‡¦ç†
   def ARGV.option
     return nil if self.empty?
     arg = self.shift
-    if arg =~ /^-/
+    if arg =â€¾ /^-/
       return arg
     else
       self.unshift arg
@@ -87,33 +87,33 @@ end
       when '-standard'; runType = T_STANDARD
       when '-wordbank'; runType = T_WORDBANK
       else
-        raise '–³Œø‚ÈƒIƒvƒVƒ‡ƒ“‚Å‚·: ' + option
+        raise 'ç„¡åŠ¹ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§ã™: ' + option
       end
     end
-    raise '«‘ƒfƒBƒŒƒNƒgƒŠ‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢' if ARGV.size < 1
+    raise 'è¾æ›¸ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’æŒ‡å®šã—ã¦ãã ã•ã„' if ARGV.size < 1
   rescue => e
     STDERR.puts e.message
     showHelp()
     exit 1
   end
 
-### ‘åˆæ’è”
+### å¤§åŸŸå®šæ•°
 
 F_Dic       = 0  # Dictionary
 F_Thesaurus = 1  # Thesaurus
 F_Usage     = 2  # Usage
 F_Grammar   = 3  # Grammar
 F_Wordbank  = 4  # Wordbank
-F_Image     = 5  # ‰æ‘œ
+F_Image     = 5  # ç”»åƒ
 
 Files = [
   {
-    'title' => 'Collins COBUILD English Dictionary',  # ƒ^ƒCƒgƒ‹
-    'name0' => 'en-cc3.trd',      # version 1 ‚Ìƒtƒ@ƒCƒ‹–¼
-    'name1' => 'hcp_en-cc3.trd',  # version 2 ‚Ìƒtƒ@ƒCƒ‹–¼
-    'name2' => 'hcp_en-cc3.trd',  # version 3 ‚Ìƒtƒ@ƒCƒ‹–¼
-    'id'    => 'c',               # €–Ú ID Ú“ª«
-    'dir'   => 'DIC',             # EPWING ƒfƒBƒŒƒNƒgƒŠ
+    'title' => 'Collins COBUILD English Dictionary',  # ã‚¿ã‚¤ãƒˆãƒ«
+    'name0' => 'en-cc3.trd',      # version 1 ã®ãƒ•ã‚¡ã‚¤ãƒ«å
+    'name1' => 'hcp_en-cc3.trd',  # version 2 ã®ãƒ•ã‚¡ã‚¤ãƒ«å
+    'name2' => 'hcp_en-cc3.trd',  # version 3 ã®ãƒ•ã‚¡ã‚¤ãƒ«å
+    'id'    => 'c',               # é …ç›® ID æ¥é ­è¾
+    'dir'   => 'DIC',             # EPWING ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
   },
   {
     'title' => 'Collins Thesaurus',
@@ -148,7 +148,7 @@ Files = [
     'dir'   => 'WBANK',
   },
   {
-    'title' => '‰æ‘œƒtƒ@ƒCƒ‹',
+    'title' => 'ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«',
     'name0' => 'en.mbx',
     'name1' => 'hcp_en-cc3.mbx',
     'name2' => 'hcp_en-cc3.mbx',
@@ -169,15 +169,15 @@ DivEBSFname = 'Wordbank_div.ebs'
 GaiziFname    = 'CobuildGaiji.xml'
 GaiziMapFname = 'CobuildGaijiMap.xml'
 
-FreqChar = '*'            # •p“x
+FreqChar = '*'            # é »åº¦
 
-PrefixExample = '@E '   # —á•¶
-PrefixSynonym = ' = '     # “¯‹`Œê
-PrefixAntonym = ' Ì '    # ”½‹`Œê
+PrefixExample = 'ã€€ãƒ» '   # ä¾‹æ–‡
+PrefixSynonym = ' = '     # åŒç¾©èª
+PrefixAntonym = ' â‡” '    # åç¾©èª
 
 ###
 def changeExt(fname, newExt)
-  fname.sub(/\.[^.]+$/, newExt)
+  fname.sub(/Â¥.[^.]+$/, newExt)
 end
 
 def changeDirAndExt(fname, newDir, newExt)
@@ -203,15 +203,15 @@ class EBSFile < File
 
   def printEBS(outDir, version)
 
-    outDir = File::expand_path(outDir).gsub(/\//, '\\')
+    outDir = File::expand_path(outDir).gsub(/Â¥//, 'Â¥Â¥')
 
     puts <<"--------"
-InPath=#{outDir}\\
-OutPath=#{outDir}\\
+InPath=#{outDir}Â¥Â¥
+OutPath=#{outDir}Â¥Â¥
 IndexFile=
 Copyright=
-GaijiFile=$(BASE)\\CobuildGaiji.xml
-GaijiMapFile=$(BASE)\\CobuildGaijiMap.xml
+GaijiFile=$(BASE)Â¥Â¥CobuildGaiji.xml
+GaijiMapFile=$(BASE)Â¥Â¥CobuildGaijiMap.xml
 EBType=0
 WordSearchHyoki=1
 WordSearchKana=1
@@ -221,8 +221,8 @@ KeywordSearch=1
 ComplexSearch=0
 topMenu=0
 singleLine=0
-kanaSep1=y
-kanaSep2=z
+kanaSep1=ã€
+kanaSep2=ã€‘
 makeFig=1
 paraHdr=0
 ruby=1
@@ -263,8 +263,8 @@ Size=10000;50000;4000;32000000;6000;250000;50000;500;500;10000;2000
         title = Files[v]['title']
         dir = Files[v]['dir']
       puts <<"--------"
-Book=#{title};#{dir};‰p˜a«“T;$(BASE)\\#{copyrightFname};_;GAI16H00;GAI16F00;_;_;_;_;_;_;
-Source=$(BASE)\\#{outFname};_;_;HTML;
+Book=#{title};#{dir};è‹±å’Œè¾å…¸;$(BASE)Â¥Â¥#{copyrightFname};_;GAI16H00;GAI16F00;_;_;_;_;_;_;
+Source=$(BASE)Â¥Â¥#{outFname};_;_;HTML;
 --------
       end
     end
@@ -277,16 +277,16 @@ class WordbankEBSFile < EBSFile
 
   def printEBS(outDir, version, divEBS)
 
-    outDir = File::expand_path(outDir).gsub(/\//, '\\')
+    outDir = File::expand_path(outDir).gsub(/Â¥//, 'Â¥Â¥')
     copyrightFname = changeExt(Files[F_Wordbank]['name' + version], CopyrightExt)
 
     puts <<"--------"
-InPath=#{outDir}\\
-OutPath=#{outDir}-WB\\
+InPath=#{outDir}Â¥Â¥
+OutPath=#{outDir}-WBÂ¥Â¥
 IndexFile=
-Copyright=$(BASE)\\#{copyrightFname}
-GaijiFile=$(BASE)\\CobuildGaiji.xml
-GaijiMapFile=$(BASE)\\CobuildGaijiMap.xml
+Copyright=$(BASE)Â¥Â¥#{copyrightFname}
+GaijiFile=$(BASE)Â¥Â¥CobuildGaiji.xml
+GaijiMapFile=$(BASE)Â¥Â¥CobuildGaijiMap.xml
 EBType=0
 WordSearchHyoki=0
 WordSearchKana=0
@@ -296,8 +296,8 @@ KeywordSearch=1
 ComplexSearch=0
 topMenu=0
 singleLine=1
-kanaSep1=y
-kanaSep2=z
+kanaSep1=ã€
+kanaSep2=ã€‘
 makeFig=1
 paraHdr=0
 ruby=1
@@ -342,8 +342,8 @@ Size=10000;10000;4000;35000000;60000;2350000;50000;500;500;10000;2000
           title = Files[v]['title'] + ' ' + num
           dir = Files[v]['dir'] + num
           puts <<"--------"
-Book=#{title};#{dir};‰p˜a«“T;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
-Source=$(BASE)\\#{outFname};_;_;HTML;
+Book=#{title};#{dir};è‹±å’Œè¾å…¸;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
+Source=$(BASE)Â¥Â¥#{outFname};_;_;HTML;
 --------
         end
       else
@@ -351,13 +351,13 @@ Source=$(BASE)\\#{outFname};_;_;HTML;
         dir = Files[v]['dir']
         puts <<"--------"
 Size=10000;10000;4000;49000000;60000;2350000;50000;500;500;10000;2000
-Book=#{title};#{dir};‰p˜a«“T;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
+Book=#{title};#{dir};è‹±å’Œè¾å…¸;_;_;GAI16H00;GAI16F00;_;_;_;_;_;_;
 --------
         (1..2).each do |n|
           num = n.to_s
           outFname = changeExt(Files[v]['name' + version], num + OutExt)
           puts <<"--------"
-Source=$(BASE)\\#{outFname};_;_;HTML;
+Source=$(BASE)Â¥Â¥#{outFname};_;_;HTML;
 --------
         end
       end
@@ -367,7 +367,7 @@ Source=$(BASE)\\#{outFname};_;_;HTML;
 
 end
 
-### ƒ^ƒO•ÏŠ·
+### ã‚¿ã‚°å¤‰æ›
 
 T = Hash::new(0)
 
@@ -386,7 +386,7 @@ def tagend(a)
   else
     r = a.pop
     unless a.empty?
-      r += a.last.sub(/\//, '')
+      r += a.last.sub(/Â¥//, '')
     end
   end
   r
@@ -425,7 +425,7 @@ def convert(str)
           p += 1
         end
         s = str[(n + 1)...p]
-        if s =~ /^[zAB]/         # ”­‰¹ƒAƒCƒRƒ“
+        if s =â€¾ /^[zAB]/         # ç™ºéŸ³ã‚¢ã‚¤ã‚³ãƒ³
           r += ' '      # ???
         elsif s == 'DW'                  # Warning
           r += tagstart(a, '<b>', '</b>') + '[!]' + tagend(a)
@@ -433,7 +433,7 @@ def convert(str)
           r += ', '
         elsif s == 'lb' || s == 'le'
           r += '' # ignore
-        elsif s == 'h'           # •ª’Ô
+        elsif s == 'h'           # åˆ†ç¶´
           r += '&middot;'
         elsif s == 'inferior'    # errata?
           r += tagstart(a, '<sub>', '</sub>')
@@ -452,12 +452,12 @@ def convert(str)
   end
   r += str[p, str.size]
 
-  r = r.gsub(/<\/([ib])><\1>/, '')
-  r = r.gsub(/<sym>(.+?)<\/sym>/) {
+  r = r.gsub(/<Â¥/([ib])><Â¥1>/, '')
+  r = r.gsub(/<sym>(.+?)<Â¥/sym>/) {
     code = $1
     case code
-    when 'mu_flat'   then s = 'ó'        # ƒtƒ‰ƒbƒg‹L†
-    when 'mu_sharp'  then s = 'ò'        # ƒVƒƒ[ƒv‹L†
+    when 'mu_flat'   then s = 'â™­'        # ãƒ•ãƒ©ãƒƒãƒˆè¨˜å·
+    when 'mu_sharp'  then s = 'â™¯'        # ã‚·ãƒ£ãƒ¼ãƒ—è¨˜å·
     when 'sy_check'  then s = '&#x2713;'  # tick
     when 'ipa_schwa' then s = '&#x0259;'  # schwa
     else
@@ -483,13 +483,13 @@ def printUnknownTags
     puts ''
     puts '==== Unknown Tags ===='
     T.sort.each { |tag, n|
-      printf("%s  %4d\n", tag, n)
+      printf("%s  %4dÂ¥n", tag, n)
     }
   end
 end
 
 def checkFlag(tag, flag, mask)
-  b = flag & ~mask
+  b = flag & â€¾mask
   if b != 0
     s = '%s: %02X %02X' % [tag, flag, b]
     puts ''
@@ -498,24 +498,24 @@ def checkFlag(tag, flag, mask)
   end
 end
 
-### Œ©o•”o—Í
+### è¦‹å‡ºéƒ¨å‡ºåŠ›
 def printHead(d, type, f, idchar, idnum)
 
   ch = d.getFlag('rec')
-  hasHead  = (ch & 0x01 != 0)  # Œ©o‚µ•”
-  hasData  = (ch & 0x02 != 0)  # ’Ç‰Áƒf[ƒ^
-  hasSound = (ch & 0x80 != 0)  # ‰¹ºƒf[ƒ^
+  hasHead  = (ch & 0x01 != 0)  # è¦‹å‡ºã—éƒ¨
+  hasData  = (ch & 0x02 != 0)  # è¿½åŠ ãƒ‡ãƒ¼ã‚¿
+  hasSound = (ch & 0x80 != 0)  # éŸ³å£°ãƒ‡ãƒ¼ã‚¿
   checkFlag('rec', ch, 0x83) # if $DEBUG
 
   hasEntry = hasVariant = hasParts = hasForms = hasUsage = hasHeadSound = false
   if hasHead
     ch = d.getFlag('head')
-    hasEntry     = (ch & 0x01 != 0)   # Œ©o‚µŒê
-    hasVariant   = (ch & 0x02 != 0)   # ˆÙŒ`/ƒL[? (—ŞŒêA•¶–@‚Ì‚İ)
-    hasParts     = (ch & 0x08 != 0)   # •iŒ (—ŞŒê‚Ì‚İ)
-    hasForms     = (ch & 0x10 != 0)   # •Ï‰»Œ` CD-ROM v3.0
-    hasUsage     = (ch & 0x20 != 0)   # —p–@ (—ŞŒê‚Ì‚İ)
-    hasHeadSound = (ch & 0x80 != 0)   # ”­‰¹
+    hasEntry     = (ch & 0x01 != 0)   # è¦‹å‡ºã—èª
+    hasVariant   = (ch & 0x02 != 0)   # ç•°å½¢/ã‚­ãƒ¼? (é¡èªã€æ–‡æ³•ã®ã¿)
+    hasParts     = (ch & 0x08 != 0)   # å“è© (é¡èªã®ã¿)
+    hasForms     = (ch & 0x10 != 0)   # å¤‰åŒ–å½¢ CD-ROM v3.0
+    hasUsage     = (ch & 0x20 != 0)   # ç”¨æ³• (é¡èªã®ã¿)
+    hasHeadSound = (ch & 0x80 != 0)   # ç™ºéŸ³
     checkFlag('head', ch, 0xBB) # if $DEBUG
 
     entry   = d.decode() if hasEntry
@@ -523,18 +523,18 @@ def printHead(d, type, f, idchar, idnum)
     parts   = d.decode() if hasParts
     forms   = d.decode() if hasForms
     usage   = d.decode() if hasUsage
-    d.decode() if hasHeadSound  # “Ç‚İ”ò‚Î‚·
+    d.decode() if hasHeadSound  # èª­ã¿é£›ã°ã™
   end
 
   hasReason = hasSyntax = hasHyphen = hasComment = hasSeq = hasFreq = false
   if hasData
     ch = d.getFlag('data')
-    hasReason  = (ch & 0x01 != 0)  # •ÊŒ©o‚µ‚É‚µ‚½——R
-    hasSyntax  = (ch & 0x02 != 0)  # \•¶ Resource Pack
-    hasHyphen  = (ch & 0x04 != 0)  # •ª’Ô CD-ROM v3.0
-    hasComment = (ch & 0x08 != 0)  # ’ß
-    hasSeq     = (ch & 0x10 != 0)  # Íß”Ô† (•¶–@‚Ì‚İ)
-    hasFreq    = (ch & 0x20 != 0)  # •p“x
+    hasReason  = (ch & 0x01 != 0)  # åˆ¥è¦‹å‡ºã—ã«ã—ãŸç†ç”±
+    hasSyntax  = (ch & 0x02 != 0)  # æ§‹æ–‡ Resource Pack
+    hasHyphen  = (ch & 0x04 != 0)  # åˆ†ç¶´ CD-ROM v3.0
+    hasComment = (ch & 0x08 != 0)  # æ³¨é‡ˆ
+    hasSeq     = (ch & 0x10 != 0)  # ç« ç¯€ç•ªå· (æ–‡æ³•ã®ã¿)
+    hasFreq    = (ch & 0x20 != 0)  # é »åº¦
     checkFlag('data', ch, 0x3F) # if $DEBUG
 
     reason  = d.decode() if hasReason
@@ -554,7 +554,7 @@ def printHead(d, type, f, idchar, idnum)
 
   if hasSound
     while d.getc != 0x00
-      s = d.readStr(3)    # “Ç‚İ”ò‚Î‚·
+      s = d.readStr(3)    # èª­ã¿é£›ã°ã™
     end
   end
 
@@ -584,13 +584,13 @@ def printHead(d, type, f, idchar, idnum)
   id = idchar + sprintf("%05d", idnum)
   f.puts '<dt id="' + id + '">' + s.strip + '</dt>'
 
-  entry = convert(entry.sub(/ \d+$/, ''))  # Œ©o‚µŒê‹æ•ª‚Ì”š‚ğíœ
-  f.puts '<key type="•\‹L">' + entry + '</key>'
+  entry = convert(entry.sub(/ Â¥d+$/, ''))  # è¦‹å‡ºã—èªåŒºåˆ†ã®æ•°å­—ã‚’å‰Šé™¤
+  f.puts '<key type="è¡¨è¨˜">' + entry + '</key>'
   a = entry.split(/ +/)
   a.each { |x|
-    f.puts '<key type="ƒNƒƒX">' + x + '</key>'
+    f.puts '<key type="ã‚¯ãƒ­ã‚¹">' + x + '</key>'
   }
-  f.puts '<key type="•\‹L">' + seq + '</key>' if hasSeq
+  f.puts '<key type="è¡¨è¨˜">' + seq + '</key>' if hasSeq
 
   f.puts '<dd>'
 
@@ -613,25 +613,25 @@ def printHead(d, type, f, idchar, idnum)
 
 end
 
-### –{‘Ìo—Í
+### æœ¬ä½“å‡ºåŠ›
 def printItem(d, type, f)
 
   ch = d.getFlag('item')
-  hasHead   = (ch & 0x01 != 0)   # ¬Œ©o‚µ
-  hasRemark = (ch & 0x02 != 0)   # —p–@‚È‚Ç
-  hasBody   = (ch & 0x10 != 0)   # –{•¶
-  hasRel    = (ch & 0x40 != 0)   # ŠÖ˜AŒê
-  hasImage  = (ch & 0x80 != 0)   # ‰æ‘œ
+  hasHead   = (ch & 0x01 != 0)   # å°è¦‹å‡ºã—
+  hasRemark = (ch & 0x02 != 0)   # ç”¨æ³•ãªã©
+  hasBody   = (ch & 0x10 != 0)   # æœ¬æ–‡
+  hasRel    = (ch & 0x40 != 0)   # é–¢é€£èª
+  hasImage  = (ch & 0x80 != 0)   # ç”»åƒ
   checkFlag('item', ch, 0xD3) # if $DEBUG
 
   hasTitle = hasSubx = hasParts = hasDeriv = hasNote = false
   if hasHead
     ch = d.getFlag('itemhead')
-    hasTitle = (ch & 0x01 != 0)  # Œ©o‚µ
-    hasSubx  = (ch & 0x02 != 0)  # ?? errata CD-ROM v3.0  (faff ‚Ì 1 Œ‚Ì‚İ)
-    hasParts = (ch & 0x08 != 0)  # •iŒ
-    hasDeriv = (ch & 0x10 != 0)  # ”h¶Œ`/•Ï‰»Œ`
-    hasNote  = (ch & 0x20 != 0)  # à–¾  Resource Pack
+    hasTitle = (ch & 0x01 != 0)  # è¦‹å‡ºã—
+    hasSubx  = (ch & 0x02 != 0)  # ?? errata CD-ROM v3.0  (faff ã® 1 ä»¶ã®ã¿)
+    hasParts = (ch & 0x08 != 0)  # å“è©
+    hasDeriv = (ch & 0x10 != 0)  # æ´¾ç”Ÿå½¢/å¤‰åŒ–å½¢
+    hasNote  = (ch & 0x20 != 0)  # èª¬æ˜  Resource Pack
     checkFlag('itemhead', ch, 0x3B) # if $DEBUG
 
     title = d.decode() if hasTitle
@@ -644,12 +644,12 @@ def printItem(d, type, f)
   hasVariant = hasHyphen = hasComment = hasStyle = hasBullet = hasNum = false
   if hasRemark
     ch = d.getFlag('remark')
-    hasVariant = (ch & 0x02 != 0)  # ˆÙŒ`
-    hasHyphen  = (ch & 0x04 != 0)  # •ª’Ô CD-ROM v3.0
-    hasComment = (ch & 0x08 != 0)  # ’ß (—ŞŒê‚Ì‚İA•\¦‚³‚ê‚È‚¢)
-    hasStyle   = (ch & 0x10 != 0)  # —p–@ (•¶–@‚Å‚ÍÍß”Ô†)
-    hasBullet  = (ch & 0x20 != 0)  # ?? («‘–{‘Ì‚Ì‚İ)
-    hasNum     = (ch & 0x80 != 0)  # ”Ô†‚Ü‚½‚Í‹L†
+    hasVariant = (ch & 0x02 != 0)  # ç•°å½¢
+    hasHyphen  = (ch & 0x04 != 0)  # åˆ†ç¶´ CD-ROM v3.0
+    hasComment = (ch & 0x08 != 0)  # æ³¨é‡ˆ (é¡èªã®ã¿ã€è¡¨ç¤ºã•ã‚Œãªã„)
+    hasStyle   = (ch & 0x10 != 0)  # ç”¨æ³• (æ–‡æ³•ã§ã¯ç« ç¯€ç•ªå·)
+    hasBullet  = (ch & 0x20 != 0)  # ?? (è¾æ›¸æœ¬ä½“ã®ã¿)
+    hasNum     = (ch & 0x80 != 0)  # ç•ªå·ã¾ãŸã¯è¨˜å·
     checkFlag('remark', ch, 0xBE) # if $DEBUG
 
     variant = d.decode() if hasVariant
@@ -665,11 +665,11 @@ def printItem(d, type, f)
   hasMeaning = hasExample = hasTable = hasXRef = hasSeeAlso = false
   if hasBody
     ch = d.getFlag('body')
-    hasMeaning = (ch & 0x01 != 0)   # ˆÓ–¡
-    hasExample = (ch & 0x02 != 0)   # —á•¶
-    hasTable   = (ch & 0x04 != 0)   # •\
-    hasXRef    = (ch & 0x08 != 0)   # QÆ
-    hasSeeAlso = (ch & 0x40 != 0)   # QÆ CD-ROM v3.0
+    hasMeaning = (ch & 0x01 != 0)   # æ„å‘³
+    hasExample = (ch & 0x02 != 0)   # ä¾‹æ–‡
+    hasTable   = (ch & 0x04 != 0)   # è¡¨
+    hasXRef    = (ch & 0x08 != 0)   # å‚ç…§
+    hasSeeAlso = (ch & 0x40 != 0)   # å‚ç…§ CD-ROM v3.0
     checkFlag('body', ch, 0x4F) # if $DEBUG
 
     if hasMeaning
@@ -682,7 +682,7 @@ def printItem(d, type, f)
         example.push(d.decode())
       }
     end
-    #### ÀÛ‚É•\¦‚·‚é‚Æ‚«‚Í—á‚Ì‘O‚É•\¦‚·‚é???
+    #### å®Ÿéš›ã«è¡¨ç¤ºã™ã‚‹ã¨ãã¯ä¾‹ã®å‰ã«è¡¨ç¤ºã™ã‚‹???
     if hasTable
       n = d.getc
       table = []
@@ -690,7 +690,7 @@ def printItem(d, type, f)
         table.push(d.decode())
       }
     end
-    if hasXRef  # QÆ
+    if hasXRef  # å‚ç…§
       n = d.getc
       xref = []
       n.times {
@@ -703,8 +703,8 @@ def printItem(d, type, f)
   hasSynonym = hasAntonym = false
   if hasRel
     ch = d.getFlag('rel')
-    hasSynonym = (ch & 0x01 != 0)  # “¯‹`Œê
-    hasAntonym = (ch & 0x02 != 0)  # ”½‹`Œê
+    hasSynonym = (ch & 0x01 != 0)  # åŒç¾©èª
+    hasAntonym = (ch & 0x02 != 0)  # åç¾©èª
     checkFlag('rel', ch, 0x03) # if $DEBUG
 
     synonym = d.decode() if hasSynonym
@@ -721,7 +721,7 @@ def printItem(d, type, f)
   if type == F_Wordbank && hasExample
     example.each do |v|
       s = convert(v)
-      head = $head.sub(/^\*/, '')  # '*' ‚ğ‚Æ‚é
+      head = $head.sub(/^Â¥*/, '')  # '*' ã‚’ã¨ã‚‹
       title = head.sub(/written/, 'W').sub(/spoken/, 'S') + ' '
       a = s.split(/ +/, 10)
       a.each do |x|
@@ -741,11 +741,11 @@ def printItem(d, type, f)
 
   if type == F_Grammar
     s = ''
-    s += ' <e.' + style + '>' if hasStyle  # Íß”Ô†
+    s += ' <e.' + style + '>' if hasStyle  # ç« ç¯€ç•ªå·
     s += ' <e.' + title + '>' if hasTitle
     if s != ''
       f.puts '<p>' + convert(s).strip + '</p>'
-      f.puts '<key type="•\‹L">' + style + '</key>' if hasStyle
+      f.puts '<key type="è¡¨è¨˜">' + style + '</key>' if hasStyle
     end
     num = ''
   else
@@ -754,17 +754,17 @@ def printItem(d, type, f)
 #    s += ' <e.' + deriv + '>' if hasDeriv
     if hasDeriv
       if hasTitle   # CD-ROM v2.0
-        if hasNum && num == '@'   # ”h¶Œ`
+        if hasNum && num == '@'   # æ´¾ç”Ÿå½¢
           s += ' <e.##dfn##' + title + '##/dfn##> ' + deriv
           num = '&xSym1;'
         else
           s += ' <e.' + title + '> ' + deriv  # ???
         end
-        if hasSubx   # CD-ROM v3.0  1 Œ‚Ì‚İ
+        if hasSubx   # CD-ROM v3.0  1 ä»¶ã®ã¿
           s += ' ' + subx
         end
       else          # CD-ROM v1.0
-        if hasNum && num == '@'   # ”h¶Œ`
+        if hasNum && num == '@'   # æ´¾ç”Ÿå½¢
           derivs = deriv.split()
           s += ' <e.##dfn##' + derivs.shift + '##/dfn##>'
           derivs.each do |x|
@@ -796,14 +796,14 @@ def printItem(d, type, f)
     end
 
     if s != ''
-      s = convert(s).gsub(/##(\/?dfn)##/) { '<' + $1 + '>' }
+      s = convert(s).gsub(/##(Â¥/?dfn)##/) { '<' + $1 + '>' }
       f.puts '<p>' + num + s.strip + '</p>'
       num = ''
     end
   end
 
 #  if hasNum && num == '@' && hasDeriv
-#    f.puts '<key type="•\‹L">' + convert(deriv).strip + '</key>'
+#    f.puts '<key type="è¡¨è¨˜">' + convert(deriv).strip + '</key>'
 #  end
 
   if hasNote
@@ -818,7 +818,7 @@ def printItem(d, type, f)
   if hasTable
     f.puts '<p>' + num + '</p>' if num != ''
     table.each { |v|
-                                # Å‰‚Ì <li> ‚ğíœ
+                                # æœ€åˆã® <li> ã‚’å‰Šé™¤
       f.puts '<p>' + convert('<e.' + v.sub(/<li>/, '') + '>') + '</p>'
     }
   end
@@ -858,22 +858,22 @@ def printItem(d, type, f)
     num = ''
   end
 
-  ## ‚±‚ÌêŠ‚Å‚¢‚¢‚©
+  ## ã“ã®å ´æ‰€ã§ã„ã„ã‹
   if hasSynonym
     a = convert(synonym).split(',')
     a.each { |v|
-      f.puts '<key type="ğŒ">' + v.strip + '</key>'
+      f.puts '<key type="æ¡ä»¶">' + v.strip + '</key>'
     }
   end
 
   if hasAntonym
     a = convert(antonym).split(',')
     a.each { |v|
-      f.puts '<key type="ğŒ">' + v.strip + '</key>'
+      f.puts '<key type="æ¡ä»¶">' + v.strip + '</key>'
     }
   end
 
-  # ’i—‹æØ‚è
+  # æ®µè½åŒºåˆ‡ã‚Š
   if type == F_Usage || type == F_Grammar
     f.puts '<p></p>'
   end
@@ -900,7 +900,7 @@ class OutHTML < File
 
 end
 
-### æ“ªƒŒƒR[ƒh‚ğ’˜ìŒ ƒtƒ@ƒCƒ‹‚Éo—Í
+### å…ˆé ­ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’è‘—ä½œæ¨©ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›
 def printCopyright(fname, type, f, d)
 
   OutHTML::open(fname, 'w') do |cf|
@@ -908,7 +908,7 @@ def printCopyright(fname, type, f, d)
     num = 0
     rec = f.getRec(num)
     d.setData(rec)
-    items = d.getc               # –{•¶€–Ú”
+    items = d.getc               # æœ¬æ–‡é …ç›®æ•°
     printHead(d, type, cf, Files[type]['id'], num)
     items.times do
       printItem(d, type, cf)
@@ -926,11 +926,11 @@ def printBody(f, type, outf, d, from, to, max)
 
 #puts rec.unpack('H*')[0].upcase.scan(/../).join(' ')
 
-    STDERR.print num, '/', max, "\r" if num % 10 == 0
+    STDERR.print num, '/', max, "Â¥r" if num % 10 == 0
 #    outf.printf("(%5d)", num)
 
     d.setData(rec)
-    items = d.getc               # –{•¶€–Ú”
+    items = d.getc               # æœ¬æ–‡é …ç›®æ•°
     printHead(d, type, outf, Files[type]['id'], num)
     items.times do |n|
 #      outf.printf("==%d", n)
@@ -949,23 +949,23 @@ else
   d = CobuildDecoder::new
 end
 
-  STDERR.print Files[type]['title'], ' ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...', "\n"
+  STDERR.print Files[type]['title'], ' ã‚’å‡ºåŠ›ã—ã¦ã„ã¾ã™...', "Â¥n"
 
   CobuildFile.open(fname, 'rb') do |f|
     f.init
     f.makeIndex
 
-    # ’˜ìŒ ƒtƒ@ƒCƒ‹o—Í
+    # è‘—ä½œæ¨©ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›
     copyrightFname = changeDirAndExt(fname, outDir, CopyrightExt)
     printCopyright(copyrightFname, type, f, d)
 
-    # –{‘Ìo—Í
+    # æœ¬ä½“å‡ºåŠ›
     max = count = f.recCount - 1
 #count = 350
 
-    STDERR.print 0, '/', max, "\r"
+    STDERR.print 0, '/', max, "Â¥r"
 
-    if type == F_Wordbank  # 2 ‚Â‚Ìƒtƒ@ƒCƒ‹‚É•ªŠ„‚µ‚Äo—Í
+    if type == F_Wordbank  # 2 ã¤ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«åˆ†å‰²ã—ã¦å‡ºåŠ›
       outFname = changeDirAndExt(fname, outDir, '1' + OutExt)
       outf = OutHTML::open(outFname, 'w')
       outf.writeHeader(Files[type]['title'])
@@ -988,7 +988,7 @@ end
       outf.close
     end
 
-    STDERR.print count, '/', max, "\n"
+    STDERR.print count, '/', max, "Â¥n"
 
 if $DEBUG
   d.printFlags
@@ -1005,7 +1005,7 @@ end
 ###
 def writeImage(fname, outDir)
 
-  STDERR.print Files[F_Image]['title'], ' ‚ğo—Í‚µ‚Ä‚¢‚Ü‚·...', "\n"
+  STDERR.print Files[F_Image]['title'], ' ã‚’å‡ºåŠ›ã—ã¦ã„ã¾ã™...', "Â¥n"
   if fname != ''
     imgDir = outDir + '/' + ImageDir
     Dir.mkdir(imgDir) unless File::exist?(imgDir)
@@ -1020,7 +1020,7 @@ def writeImage(fname, outDir)
       end
     end
   end
-  STDERR.print "’ˆÓ: EBStudio ‚Å•ÏŠ·‚ğÀs‚·‚é‘O‚É\n#{imgDir} ‚É‚ ‚é .gif ƒtƒ@ƒCƒ‹‚ğ .jpg ƒtƒ@ƒCƒ‹‚É•ÏŠ·‚µ‚Ä‚­‚¾‚³‚¢\n"
+  STDERR.print "æ³¨æ„: EBStudio ã§å¤‰æ›ã‚’å®Ÿè¡Œã™ã‚‹å‰ã«Â¥n#{imgDir} ã«ã‚ã‚‹ .gif ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ .jpg ãƒ•ã‚¡ã‚¤ãƒ«ã«å¤‰æ›ã—ã¦ãã ã•ã„Â¥n"
 
 end
 
@@ -1028,11 +1028,11 @@ end
 def main(runType, scrPath)
 
   inDir = ARGV.shift
-  inDir = inDir.gsub(/\\/, '/').sub(/\/$/, '')
+  inDir = inDir.gsub(/Â¥Â¥/, '/').sub(/Â¥/$/, '')
   outDir = ARGV.shift || '.'
-  outDir = outDir.gsub(/\\/, '/').sub(/\/$/, '')
+  outDir = outDir.gsub(/Â¥Â¥/, '/').sub(/Â¥/$/, '')
 
-  # ƒo[ƒWƒ‡ƒ“”»’è
+  # ãƒãƒ¼ã‚¸ãƒ§ãƒ³åˆ¤å®š
   version = ''
   [ F_Dic, F_Thesaurus, F_Usage, F_Grammar, F_Wordbank, F_Image ].each do |v|
     if File::exist?(inDir + '/' + Files[v]['name0'])
@@ -1044,10 +1044,10 @@ def main(runType, scrPath)
     end
   end
   if version == ''
-    STDERR.print "#{inDir} ‚É•K—v‚Èƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ\n"
+    STDERR.print "#{inDir} ã«å¿…è¦ãªãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“Â¥n"
     exit 3
   end
-  # ƒVƒ\[ƒ‰ƒX‚ª‚È‚¯‚ê‚Î CD-ROM v3 ‚Æ‚İ‚È‚·
+  # ã‚·ã‚½ãƒ¼ãƒ©ã‚¹ãŒãªã‘ã‚Œã° CD-ROM v3 ã¨ã¿ãªã™
   if version == '1'
     if not File::exist?(inDir + '/' + Files[F_Thesaurus]['name1'])
       version = '2'
@@ -1055,50 +1055,50 @@ def main(runType, scrPath)
   end
 
   start = Time::now
-  STDERR.print "ŠJn“ú: ", start.strftime('%Y-%m-%d %X'), "\n"
+  STDERR.print "é–‹å§‹æ—¥æ™‚: ", start.strftime('%Y-%m-%d %X'), "Â¥n"
 
   if runType == T_STANDARD
 
-    # «‘o—Í
+    # è¾æ›¸å‡ºåŠ›
     [ F_Dic, F_Thesaurus, F_Usage, F_Grammar].each do |v|
       if Files[v]['name' + version] != ''
         fname = inDir + '/' + Files[v]['name' + version]
         if File::exist?(fname)
           printFile(fname, v, outDir)
         else
-          STDERR.print "#{fname}‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ\n"
+          STDERR.print "#{fname}ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“Â¥n"
         end
       end
     end
 
-    # ‰æ‘œo—Í
+    # ç”»åƒå‡ºåŠ›
     [ F_Image ].each do |v|
       fname = inDir + '/' + Files[v]['name' + version]
       if File::exist?(fname)
         writeImage(fname, outDir)
       else
-        STDERR.print "#{fname}‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ\n"
+        STDERR.print "#{fname}ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“Â¥n"
       end
     end
 
-    # ì‹ÆŠÂ‹«’è‹`ƒtƒ@ƒCƒ‹o—Í
+    # ä½œæ¥­ç’°å¢ƒå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›
     EBSFile::open(outDir + '/' + EBSFnames[T_STANDARD], 'w') do |f|
       f.printEBS(outDir, version)
     end
 
   else
 
-    # «‘o—Í
+    # è¾æ›¸å‡ºåŠ›
     [ F_Wordbank ].each do |v|
       fname = inDir + '/' + Files[v]['name' + version]
       if File::exist?(fname)
         printFile(fname, v, outDir)
       else
-        STDERR.print "#{fname}‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ\n"
+        STDERR.print "#{fname}ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“Â¥n"
       end
     end
 
-    # ì‹ÆŠÂ‹«’è‹`ƒtƒ@ƒCƒ‹o—Í
+    # ä½œæ¥­ç’°å¢ƒå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›
     WordbankEBSFile::open(outDir + '/' + EBSFnames[T_WORDBANK], 'w') do |f|
       f.printEBS(outDir, version, false)
     end
@@ -1108,13 +1108,13 @@ def main(runType, scrPath)
 
   end
 
-  # ŠOšƒtƒ@ƒCƒ‹‚ÌƒRƒs[
+  # å¤–å­—ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚³ãƒ”ãƒ¼
   copyFile(scrPath + '/' + GaiziFname, outDir + '/' + GaiziFname)
   copyFile(scrPath + '/' + GaiziMapFname, outDir + '/' + GaiziMapFname)
 
   finish = Time::now
-  STDERR.print "I—¹“ú: ", finish.strftime('%Y-%m-%d %X'), "\n"
-  STDERR.print "ˆ—ŠÔ: ", Time::at(finish.to_i - start.to_i).utc.strftime('%X'), "\n"
+  STDERR.print "çµ‚äº†æ—¥æ™‚: ", finish.strftime('%Y-%m-%d %X'), "Â¥n"
+  STDERR.print "å‡¦ç†æ™‚é–“: ", Time::at(finish.to_i - start.to_i).utc.strftime('%X'), "Â¥n"
 
 end
 
