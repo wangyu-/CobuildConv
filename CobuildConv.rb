@@ -2,6 +2,7 @@
 #!/user/local/bin/ruby -Ks
 #aaa
 #testing
+#bbb
 def showHelp; scrName = File::basename($0.gsub(/\\/, '/'));
 puts <<"================================================"
 概要: COBUILD の EBStudio 用入力ファイルを作成する
