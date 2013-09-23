@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<gaijiSet>
+
+<!-- hankaku -->
+
+<gaijiMap name="iexcl" unicode="#161" ebcode="A621" alt="i" />
+<gaijiMap name="cent" unicode="#162" ebcode="A622"/>
+<gaijiMap name="pound" unicode="#163" ebcode="A623"/>
+<gaijiMap name="curren" unicode="#164" ebcode="A624"/>
+<gaijiMap name="yen" unicode="#165" ebcode="A625"/>
+<gaijiMap name="brvbar" unicode="#166" ebcode="A626"/>
+<gaijiMap name="sect" unicode="#167" ebcode="A627"/>
+<gaijiMap name="uml" unicode="#168" ebcode="A628"/>
+<gaijiMap name="copy" unicode="#169" ebcode="A629"/>
+<gaijiMap name="ordf" unicode="#170" ebcode="A62A"/>
+
+<gaijiMap name="laquo" unicode="#171" ebcode="A62B"/>
+<gaijiMap name="not" unicode="#172" ebcode="A62C"/>
+<gaijiMap name="shy" unicode="#173" ebcode="A62D"/>
+<gaijiMap name="reg" unicode="#174" ebcode="A62E"/>
+<gaijiMap name="macr" unicode="#175" ebcode="A62F"/>
+<gaijiMap name="deg" unicode="#176" ebcode="A630"/>
+<gaijiMap name="plusmn" unicode="#177" ebcode="A631"/>
+<gaijiMap name="sup2" unicode="#178" ebcode="A632" alt="2" />
+<gaijiMap name="sup3" unicode="#179" ebcode="A633" alt="3" />
+<gaijiMap name="acute" unicode="#180" ebcode="A634"/>
+
+<gaijiMap name="micro" unicode="#181" ebcode="A635"/>
+<gaijiMap name="para" unicode="#182" ebcode="A636"/>
+<gaijiMap name="middot" unicode="#183" ebcode="A637"/>
+<gaijiMap name="cedil" unicode="#184" ebcode="A638"/>
+<gaijiMap name="sup1" unicode="#185" ebcode="A639" alt="1" />
+<gaijiMap name="ordm" unicode="#186" ebcode="A63A"/>
+<gaijiMap name="raquo" unicode="#187" ebcode="A63B"/>
+<gaijiMap name="frac14" unicode="#188" ebcode="A63C"/>
+<gaijiMap name="frac12" unicode="#189" ebcode="A63D"/>
+<gaijiMap name="frac34" unicode="#190" ebcode="A63E"/>
+
+<gaijiMap name="iquest" unicode="#191" ebcode="A63F"/>
+<gaijiMap name="Agrave" unicode="#192" ebcode="A640" alt="A" />
+<gaijiMap name="Aacute" unicode="#193" ebcode="A641" alt="A" />
+<gaijiMap name="Acirc" unicode="#194" ebcode="A642" alt="A" />
+<gaijiMap name="Atilde" unicode="#195" ebcode="A643" alt="A" />
+<gaijiMap name="Auml" unicode="#196" ebcode="A644" alt="A" />
+<gaijiMap name="Aring" unicode="#197" ebcode="A645" alt="A" />
+<gaijiMap name="AElig" unicode="#198" ebcode="A646" alt="AE" />
+<gaijiMap name="Ccedil" unicode="#199" ebcode="A647" alt="C" />
+<gaijiMap name="Egrave" unicode="#200" ebcode="A648" alt="E" />
+
+<gaijiMap name="Eacute" unicode="#201" ebcode="A649" alt="E" />
+<gaijiMap name="Ecirc" unicode="#202" ebcode="A64A" alt="E" />
+<gaijiMap name="Euml" unicode="#203" ebcode="A64B" alt="E" />
+<gaijiMap name="Igrave" unicode="#204" ebcode="A64C" alt="I" />
+<gaijiMap name="Iacute" unicode="#205" ebcode="A64D" alt="I" />
+<gaijiMap name="Icirc" unicode="#206" ebcode="A64E" alt="I" />
+<gaijiMap name="Iuml" unicode="#207" ebcode="A64F" alt="I" />
+<gaijiMap name="ETH" unicode="#208" ebcode="A650"/>
+<gaijiMap name="Ntilde" unicode="#209" ebcode="A651" alt="N" />
+<gaijiMap name="Ograve" unicode="#210" ebcode="A652" alt="O" />
+
+<gaijiMap name="Oacute" unicode="#211" ebcode="A653" alt="O" />
+<gaijiMap name="Ocirc" unicode="#212" ebcode="A654" alt="O" />
+<gaijiMap name="Otilde" unicode="#213" ebcode="A655" alt="O" />
+<gaijiMap name="Ouml" unicode="#214" ebcode="A656" alt="O" />
+<gaijiMap name="times" unicode="#215" ebcode="A657"/>
+<gaijiMap name="Oslash" unicode="#216" ebcode="A658" alt="O" />
+<gaijiMap name="Ugrave" unicode="#217" ebcode="A659" alt="U" />
+<gaijiMap name="Uacute" unicode="#218" ebcode="A65A" alt="U" />
+<gaijiMap name="Ucirc" unicode="#219" ebcode="A65B" alt="U" />
+<gaijiMap name="Uuml" unicode="#220" ebcode="A65C" alt="U" />
+
+<gaijiMap name="Yacute" unicode="#221" ebcode="A65D" alt="Y" />
+<gaijiMap name="THORN" unicode="#222" ebcode="A65E"/>
+<gaijiMap name="szlig" unicode="#223" ebcode="A65F"/>
+<gaijiMap name="agrave" unicode="#224" ebcode="A660" alt="a" />
+<gaijiMap name="aacute" unicode="#225" ebcode="A661" alt="a" />
+<gaijiMap name="acirc" unicode="#226" ebcode="A662" alt="a" />
+<gaijiMap name="atilde" unicode="#227" ebcode="A663" alt="a" />
+<gaijiMap name="auml" unicode="#228" ebcode="A664" alt="a" />
+<gaijiMap name="aring" unicode="#229" ebcode="A665" alt="a" />
+<!-- gaijiMap name="aelig" unicode="#230" ebcode="A666"/ -->
+
+<gaijiMap name="ccedil" unicode="#231" ebcode="A667" alt="c" />
+<gaijiMap name="egrave" unicode="#232" ebcode="A668" alt="e" />
+<gaijiMap name="eacute" unicode="#233" ebcode="A669" alt="e" />
+<gaijiMap name="ecirc" unicode="#234" ebcode="A66A" alt="e" />
+<gaijiMap name="euml" unicode="#235" ebcode="A66B" alt="e" />
+<gaijiMap name="igrave" unicode="#236" ebcode="A66C" alt="i" />
+<gaijiMap name="iacute" unicode="#237" ebcode="A66D" alt="i" />
+<gaijiMap name="icirc" unicode="#238" ebcode="A66E" alt="i" />
+<gaijiMap name="iuml" unicode="#239" ebcode="A66F" alt="i" />
+<gaijiMap name="eth" unicode="#240" ebcode="A670"/>
+
+<gaijiMap name="ntilde" unicode="#241" ebcode="A671" alt="n" />
+<gaijiMap name="ograve" unicode="#242" ebcode="A672" alt="o" />
+<gaijiMap name="oacute" unicode="#243" ebcode="A673" alt="o" />
+<gaijiMap name="ocirc" unicode="#244" ebcode="A674" alt="o" />
+<gaijiMap name="otilde" unicode="#245" ebcode="A675" alt="o" />
+<gaijiMap name="ouml" unicode="#246" ebcode="A676" alt="o" />
+<gaijiMap name="divide" unicode="#247" ebcode="A677"/>
+<gaijiMap name="oslash" unicode="#248" ebcode="A678"/>
+<gaijiMap name="ugrave" unicode="#249" ebcode="A679" alt="u" />
+<gaijiMap name="uacute" unicode="#250" ebcode="A67A" alt="u" />
+
+<gaijiMap name="ucirc" unicode="#251" ebcode="A67B" alt="u" />
+<gaijiMap name="uuml" unicode="#252" ebcode="A67C" alt="u" />
+<gaijiMap name="yacute" unicode="#253" ebcode="A67D" alt="y" />
+<gaijiMap name="thorn" unicode="#254" ebcode="A67E"/>
+<gaijiMap name="yuml" unicode="#255" ebcode="A721" alt="y" />
+
+<gaijiMap name="OElig" unicode="#338" ebcode="A722" alt="OE" />
+<gaijiMap name="oelig" unicode="#339" ebcode="A723" alt="oe" />
+<gaijiMap name="Scaron" unicode="#352" ebcode="A724" alt="S" />
+<gaijiMap name="scaron" unicode="#353" ebcode="A725" alt="s" />
+<gaijiMap name="Yuml" unicode="#376" ebcode="A726" alt="Y" />
+<gaijiMap name="fnof" unicode="#402" ebcode="A727"/>
+<gaijiMap name="circ" unicode="#710" ebcode="A728" alt="^" />
+<gaijiMap name="tilde" unicode="#732" ebcode="A729" alt="~" />
+
+<gaijiMap unicode="#x0254" ebcode="A72B"/>
+<gaijiMap unicode="#xE002" ebcode="A72C"/>
+<gaijiMap unicode="#xE003" ebcode="A72D"/>
+<gaijiMap unicode="#x0259" ebcode="A72E"/>
+<gaijiMap unicode="#xE004" ebcode="A72F"/>
+<gaijiMap unicode="#xE005" ebcode="A730"/>
+<gaijiMap unicode="#x028C" ebcode="A731"/>
+<gaijiMap unicode="#xE006" ebcode="A732"/>
+<gaijiMap unicode="#xE007" ebcode="A733"/>
+<gaijiMap unicode="#x02D0" ebcode="A734"/>
+<gaijiMap unicode="#x0251" ebcode="A735"/>
+<gaijiMap unicode="#xE008" ebcode="A736"/>
+<gaijiMap unicode="#xE009" ebcode="A737"/>
+<gaijiMap unicode="#x0283" ebcode="A738"/>
+<gaijiMap unicode="#x028A" ebcode="A739"/>
+<gaijiMap unicode="#x014B" ebcode="A73A"/>
+<gaijiMap unicode="#x03B8" ebcode="A73B"/>
+<gaijiMap unicode="#x0292" ebcode="A73C"/>
+<gaijiMap unicode="#x0252" ebcode="A73D"/>
+
+<gaijiMap name="Amacr" unicode="#x0100" ebcode="A73E" alt="A" />
+<gaijiMap name="amacr" unicode="#x0101" ebcode="A73F" alt="a" />
+<gaijiMap name="Emacr" unicode="#x0112" ebcode="A740" alt="E" />
+<gaijiMap name="emacr" unicode="#x0113" ebcode="A741" alt="e" />
+<gaijiMap name="Imacr" unicode="#x012A" ebcode="A742" alt="I" />
+<gaijiMap name="imacr" unicode="#x012B" ebcode="A743" alt="i" />
+<gaijiMap name="Omacr" unicode="#x014C" ebcode="A744" alt="O" />
+<gaijiMap name="omacr" unicode="#x014D" ebcode="A745" alt="o" />
+<gaijiMap name="Umacr" unicode="#x016A" ebcode="A746" alt="U" />
+<gaijiMap name="umacr" unicode="#x016B" ebcode="A747" alt="u" />
+
+<gaijiMap name="xSym1" unicode="#xea00" ebcode="A748"/>
+<gaijiMap name="xSym2" unicode="#xea01" ebcode="A749"/>
+<gaijiMap name="xFrac13" unicode="#x2153" ebcode="A74A"/>
+
+<!-- zenkaku -->
+
+<gaijiMap name="trade"  unicode="#x2122" ebcode="B121"/>
+<gaijiMap name="spades" unicode="#x2660" ebcode="B122"/>
+<gaijiMap name="clubs"  unicode="#x2663" ebcode="B123"/>
+<gaijiMap name="hearts" unicode="#x2665" ebcode="B124"/>
+<gaijiMap name="diams"  unicode="#x2666" ebcode="B125"/>
+<gaijiMap name="checkmark"  unicode="#x2713" ebcode="B126"/>
+
+</gaijiSet>
+

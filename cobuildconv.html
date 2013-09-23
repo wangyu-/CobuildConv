@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+<head>
+<meta name="GENERATOR" content="PPWIZARD version 03.024 on OS/2, FREE tool for Windows, OS/2, DOS and UNIX by Dennis Bareis (http://www.labyrinth.net.au/~dbareis/ppwizard.htm)">
+
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rev="made" title="NOMAD" href="mailto:TBE00506@nifty.com">
+<link rel="stylesheet" type="text/css" href="../nomad.css" title="NOMAD basic style">
+<title>CobuildConv.rb 使用説明書</title>
+</head>
+<body>
+<h1>CobuildConv.rb 使用説明書</h1>
+<div class="top">
+<p>更新: 2004-02-26</p>
+</div>
+<hr>
+<!-- end of header.ih -->
+<h2>●はじめに</h2>
+<p><a href="http://hp.vector.co.jp/authors/VA005784/cobuild/cobuildconv132.zip">CobuildConv.rb v1.32</a></p>
+<p>Collins COBUILD CD-ROMのデータを変換して、EBStudio用の入力ファイルを作成するRubyスクリプトです。独自形式辞書からEPWING辞書に変換できます。</p>
+<h2>●圧縮ファイルの内容</h2>
+<dl>
+<dt>CobuildConv.rb</dt><dd>変換スクリプト本体</dd>
+<dt>CobuildLib.rb</dt><dd>変換用ライブラリ</dd>
+<dt>CobuildGaiji.xml</dt><dd>外字フォントファイル</dd>
+<dt>CobuildGaijiMap.xml</dt><dd>外字定義ファイル</dd>
+<dt>cobuild.txt</dt><dd>辞書構造の解説(開発者向け)</dd>
+<dt>cobuildconv.html</dt><dd>使用説明書(このファイル)</dd>
+</dl>
+<h2>●辞書変換に必要なもの</h2>
+<ol>
+<li>Collins COBUILD CD-ROM (以下のいずれか)</li>
+<ul>
+<li>書籍第3版</li>
+<ul>
+<li>Collins COBUILD on CD-ROM ISBN:0-00-710884-2 ('Version 1.0 Software')</li>
+<li>Collins COBUILD on CD-ROM ISBN:0-00-715905-6 ('Version 2.0 Software')</li>
+</ul>
+<li>書籍第4版 ('Version 3.0 Software')</li>
+<ul>
+<li>Advanced Learner's English Dictionary + CD-Rom ISBN:0-00-715799-1 Hardback</li>
+<li>Advanced Learner's English Dictionary + CD-Rom ISBN:0-00-715800-9 Paperback</li>
+<li>Collins Cobuild on CD-Rom Resource Pack ISBN:0-00-716921-3</li>
+</ul>
+</ul>
+<li><a href="http://www.ruby-lang.org/ja/">Ruby</a></li>
+<li><a href="http://www31.ocn.ne.jp/~h_ishida/">EBStudio v1.57以降</a></li>
+<li>画像処理プログラム(GIF形式をJPEG形式に変換できるもの)</li>
+</ol>
+<h2>●動作確認</h2>
+<ul>
+<li>OS/2 Warp 4 + <a href="http://homepage2.nifty.com/siena/ruby/">Ruby 1.8.1 for OS/2</a></li>
+<li>Windows 98 + EBStudio 1.62b</li>
+</ul>
+<h2>●構文</h2>
+<pre>
+ruby -Ks CobuildConv.rb &lt;options&gt; &lt;inDir&gt; [&lt;outDir&gt;]
+  &lt;options&gt;
+    -standard  Wordbank 以外を変換する (既定値)
+    -wordbank  Wordbank のみを変換する
+  &lt;inDir&gt;   .trd ファイルのあるディレクトリ
+  &lt;outDir&gt;  出力ディレクトリ (指定なしならカレントディレクトリ)
+</pre>
+<h2>●説明の前提</h2>
+<ol>
+<li>COBUILD本体、Ruby、EBStudioは入手して導入が済んでいるものとします。</li>
+<li><p>手順はWindows98の場合です。ほかのOSでは適宜読み替えてください。</p>
+<p>ただし作者はOS/2 Warpでしか変換スクリプトの動作を確認していません。</p></li>
+</ol>
+<h2>●変換手順 (Wordbank以外)</h2>
+<ul>
+<li>
+<h3>1. 変換スクリプトのダウンロード</h3>
+<p>ダウンロード後、適当な場所にアーカイブを展開します。ここでは「D:\work」に展開したものとします。</p>
+</li>
+<li>
+<h3>2. 変換スクリプトの実行</h3>
+<p>コマンドライン(MS-DOSプロンプト)を開きます。</p>
+<p>CD-ROMから直接変換する場合は、CD-ROMドライブに辞書CD-ROMをセットし、ドライブが「X:」、ファイルの出力先が「E:\EPWING\cobuild」とすると、CD-ROMがversion 1の場合は、次のように入力します。</p>
+<pre class="command">
+ruby -Ks D:\work\CobuildConv.rb X:\ E:\EPWING\cobuild
+</pre>
+<p>CD-ROMがVersion 2以降の場合は、「X:\」ではなく「X:\data」とします。</p>
+<p>ハードディスクにインストール済みのファイルから変換する場合は、「X:\」の代わりに、COBUILDのインストール先で拡張子が.trdというファイルのあるディレクトリを指定します。</p>
+<p>E:\EPWING\cobuildに以下のファイルが出力されます。</p>
+<ul>
+<li>EBStudio入力ファイル (*.html)</li>
+<li>EBStudio作業環境定義ファイル (Cobuild.ebs)</li>
+<li>外字ファイル (*.xml)</li>
+<li>画像ファイル (img\*.gif)</li>
+</ul>
+</li>
+<li>
+<h3>3. 画像ファイルの変換</h3>
+<p>適当な画像処理ファイルを使用して、E:\EPWING\cobuild\imgにあるGIF形式ファイルをすべてJPEG形式に変換します。拡張子は<em>.jpg</em>としてください(.jpegでは取り込めません)。</p>
+<p>この作業をしなくても画像が表示できなくなるだけで、辞書の作成、検索は問題なくおこなえます。</p>
+</li>
+<li>
+<h3>4. EBStudioの実行</h3>
+<p>EBStudioを起動し、[ファイル]&gt;[開く]で、出力されたCobuild.ebsを開きます。</p>
+<p>出力先などを必要に応じて修正します。</p>
+<p>辞書の作成処理を実行します([ファイル]&gt;[実行]またはツールバーの実行ボタン)。</p>
+<br>
+<p>以上で完了です。</p>
+</li>
+</ul>
+<h2>●変換手順 (Wordbank)</h2>
+<p>上記の変換手順と基本的に同じです。違いは、</p>
+<ul>
+<li>EBStudioはv1.57以降を使用してください。</li>
+<li><p>「2. 変換スクリプトの実行」時にオプションとして「-wordbank」を指定します。</p>
+<pre class="command">
+ruby -Ks D:\work\CobuildConv.rb -wordbank X:\ E:\EPWING\cobuild
+</pre>
+<li>画像ファイルは出力されません。画像は著作権ファイルで使用されるだけなので、無視してもかまいません。上記の変換手順で作成した画像ファイルを残してあり、ファイルの出力先を同じにしてあれば、その画像が使用されます。</li>
+<li>作業環境定義ファイルはWordbank.ebsとWordbank_div.ebsの2つが出力されます。
+<ul>
+<li>搭載メモリが多い場合(256MB以上) -- Wordbank.ebsを使用してください。Wordbank全体が1つの書籍として作成されます。</li>
+<li>搭載メモリが少ない場合(128MB程度) -- Wordbank_div.ebsを使用してください。Wordbankが2つの書籍に分割して作成されます。Wordbank.ebsを使用した場合、変換途中でメモリ不足のためエラーになる可能性があります。</li>
+</ul>
+</li>
+<li>「4. EBStudioの実行」時に辞書の出力先はCOBUILD本体とは別にしてください。たとえば、COBUILD本体を「E:\EPWING\cobuild」に作成する場合、Wordbankは「E:\EPWING\wordbank」に出力するようにします。</li>
+</ul>
+<p>なお、作成される索引は条件索引ですが、DDWinの場合、表記索引も仮名索引もない場合、自動的に条件索引を使用して前方一致検索をおこなうようですので、Wordbankは別の辞書グループにしたほうが幸せです。</p>
+<h2>●作成される索引</h2>
+<dl>
+<dt>English Dictionary</dt>
+<dd>
+<p>見出し語の前方一致、後方一致、クロス条件索引を作成します。</p>
+<p>派生形の前方一致、後方一致索引を作成します。</p>
+<p>類義語、反義語の条件索引を作成します。</p>
+</dd>
+<dt>English Grammar</dt>
+<dd>
+<p>章節見出しの前方一致、後方一致、クロス条件索引を作成します。</p>
+<p>章節番号についても前方一致、後方一致索引を作成します。これは参照先に簡単に飛べるようにするためです。</p>
+</dd>
+<dt>English Usage</dt>
+<dd>
+<p>見出し語の前方一致、後方一致、クロス条件索引を作成します。</p>
+</dd>
+<dt>Thesaurus</dt>
+<dd>
+<p>見出し語の前方一致、後方一致、クロス条件索引を作成します。</p>
+<p>各類義語の条件索引を作成します。</p>
+</dd>
+<dt>Wordbank</dt>
+<dd>
+<p>用例中の2文字以上の英単語の条件索引を作成します。</p>
+</dd>
+</dl>
+<h2>●質問・要望など</h2>
+<p>変換スクリプトはOSやRubyのバージョンによっては不具合があるかもしれません。その場合は御連絡ください。できるだけ対処します。</p>
+<p>質問・要望などは、<a href="http://hpcgi2.nifty.com/EBTools/bbs/wforum.cgi">EBシリーズ・サポート掲示板</a>にお願いします(hishidaさんのご好意で間借りさせてもらっています)。</p>
+<p>スクリプトをこう変えると見やすくなるよ、といったご指摘は大歓迎です。まだRubyは手探りの状態なので、突っ込みどころは多いと思います。ただ、こういった開発系の話題は、EBシリーズ・サポート掲示板にはそぐわないと思いますので、当面は<a href="mailto:TBE00506@nifty.com">メール</a>がいいかもしれません。</p>
+<h2>●謝辞</h2>
+<p>CD-ROM v3.0への対応にあたっては、作者がCD-ROMを持っていないため、hiropapaさんから多大なるご協力をいただきました。また、ょゎさんからも情報を提供していただきました。Resource Packに関しては、matsuさんのご協力をいただきました。ありがとうございました。</p>
+<h2>●履歴</h2>
+<ul>
+<li><p>v1.00 2003-06-28 by nomad</p>
+<p>公開</p>
+</li>
+<li><p>v1.10 2003-07-15 by nomad</p>
+<p>Wordbankに対応 (-wordbank オプション)</p>
+<p>CD-ROM v2.0で派生形の索引が作成されないバグを修正</p>
+<p>CD-ROM v1.0で派生形の後方一致索引が正しく作成されないバグを修正</p>
+<p>著作権ファイルを出力</p>
+<p>外字ファイルを出力先にコピー</p>
+<p>その他細かい修正</p>
+</li>
+<li><p>v1.11 2003-07-29 by nomad</p>
+<p>CD-ROM v2.0のファイル名のミスを修正 (hcp_en_cc3.trd -> hcp_en-cc3.trd など)</p>
+<li><p>v1.12 2003-07-30 by nomad</p>
+<p>ファイル名の修正もれ (hcp_en_cc3.mbx -> hcp_en-cc3.mbx)</p>
+</li>
+<li><p>v1.20 2004-01-18 by nomad</p>
+<p>CD-ROM Version 3.0に対応</p>
+<p>その他、若干の修正</p>
+</li>
+<li><p>v1.30 2004-02-04 by nomad</p>
+<p>Resource Packに対応</p>
+<p>Wordbankを1書籍にするebsを標準にし、2書籍にするebsも出力</p>
+<p>Wordbank以外の外字に完全対応</p>
+</li>
+<li><p>v1.31 2004-02-17 by nomad</p>
+<p>Mac環境で実行できるように修正</p>
+</li>
+<li><p>v1.32 2004-02-26 by nomad</p>
+<p>分数の 1/3 が外字に変換されなかったのを修正</p>
+<p>文末に文字参照 (&amp;....;) がくると外字に変換されない場合があったのを修正</p>
+<p>Resource Pack の記号、ipa_schwa に対応</p>
+<p>tick mark の外字を追加</p>
+</li>
+</ul>
+<!-- start of footer.ih -->
+<hr>
+<div class="cdate">
+<p>作成: 2003-06-28</p>
+</div>
+<address lang="en">
+<a href="http://hp.vector.co.jp/authors/VA005784/" title="Home">http://hp.vector.co.jp/authors/VA005784/</a>cobuild/cobuildconv.html<br>
+Copyright (C) 2003 <a href="http://www.vector.co.jp/vpack/browse/person/an005784.html">NOMAD</a>. All Rights Reserved.<br>
+mailto:<a href="mailto:TBE00506@nifty.com">TBE00506@nifty.com</a>
+</address>
+</body>
+</html>
